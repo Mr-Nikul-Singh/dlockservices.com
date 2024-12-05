@@ -11,9 +11,9 @@
                     <div class="header-element">
                         <div class="horizontal-logo">
                             <a href="<?= site_url('dashboard') ?>" class="header-logo">
-                            <img src="<?= base_url('assets/images/brand-logos/desktop-dark2.png') ?>" alt="logo" class="desktop-logo" width="40">
-                            <img src="<?= base_url('assets/images/brand-logos/desktop-dark2.png') ?>" alt="logo" class="toggle-logo" width="40">
-                            <img src="<?= base_url('assets/images/brand-logos/desktop-dark2.png') ?>" alt="logo" class="desktop-dark"width="40">
+                            <img src="<?= base_url('assets/public/images/logo-dark.png') ?>" alt="logo" class="desktop-logo" width="40">
+                            <img src="<?= base_url('assets/public/images/logo-dark.png') ?>" alt="logo" class="toggle-logo" width="40">
+                            <img src="<?= base_url('assets/public/images/logo-dark.png') ?>" alt="logo" class="desktop-dark"width="40">
                             </a>
                         </div>
                     </div>
@@ -229,9 +229,9 @@
                     <?php else: ?>
                         <img src="<?= base_url('assets/logo/logo.png') ?>" style="border-radius:0px !important;" alt="navbar brand" width="120" style="width:120px;" class="navbar-brand">
                     <?php endif; ?> -->
-                    <img src="<?= base_url('assets/images/brand-logos/desktop-dark2.png') ?>" alt="logo" class="desktop-logo" width="100">
-                    <img src="<?= base_url('assets/images/brand-logos/desktop-dark2.png') ?>" alt="logo" class="toggle-logo" width="40">
-                    <img src="<?= base_url('assets/images/brand-logos/desktop-dark2.png') ?>?v=<?= filemtime('assets/images/brand-logos/desktop-dark2.png') ?>" alt="logo" class="desktop-dark" width="120px">
+                    <img src="<?= base_url('assets/public/images/logo-dark.png') ?>" alt="logo" class="desktop-logo" width="100">
+                    <img src="<?= base_url('assets/public/images/logo-dark.png') ?>" alt="logo" class="toggle-logo" width="40">
+                    <img src="<?= base_url('assets/public/images/logo-dark.png') ?>?v=<?= filemtime('assets/public/images/logo-dark.png') ?>" alt="logo" class="desktop-dark" width="120px">
                 </a>
             </div>
             <!-- End::main-sidebar-header -->
