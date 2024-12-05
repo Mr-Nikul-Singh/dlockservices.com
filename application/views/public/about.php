@@ -46,7 +46,7 @@
                             <p class="text-muted para-desc">At Dlock Servers Hosting, we believe in providing reliable and efficient server solutions to our clients. Our journey began with a simple goal: to make hosting services accessible and easy to use for everyone.</p>
                             <p class="text-muted para-desc mb-0">Over the years, we have evolved from a small startup into a trusted name in the industry. Our team is dedicated to ensuring that your experience with us is seamless and hassle-free. We understand the importance of having a strong online presence, and we strive to support your business with top-notch server hosting services. With Dlock, you can focus on growing your business while we take care of your hosting needs.</p>
                             <div class="mt-4">
-                                <a href="<?= site_url('#plans') ?>" class="btn btn-soft-primary">Get Started <i class="mdi mdi-arrow-right"></i></a>
+                                <a href="<?= site_url('#plans') ?>" class="btn btn-primary">Get Started <i class="mdi mdi-arrow-right"></i></a>
                             </div>
                         </div>
                     </div><!--end col-->

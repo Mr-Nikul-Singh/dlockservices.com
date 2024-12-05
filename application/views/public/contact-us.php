@@ -130,7 +130,11 @@
                 </div><!--end row-->
             </div><!--end container-->
 
-            <div class="container-fluid mt-100 mt-60">
+            <br>
+            <br>
+            <br>
+
+            <div class="container-fluid mt-100 mt-60 d-none">
                 <div class="row">
                     <div class="col-12 p-0">
                         <div class="card map border-0">

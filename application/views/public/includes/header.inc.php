@@ -24,7 +24,7 @@
      <?php if(!empty($TitleIco)): ?>
         <link rel="shortcut icon" href="<?= base_url('assets/meta/'.$TitleIco) ?>">
     <?php else: ?>
-        <link rel="shortcut icon" href="<?= base_url('assets/public/images/favicon.ico') ?>">
+        <link rel="shortcut icon" href="<?= base_url('assets/public/images/icon.png') ?>">
     <?php endif; ?>
     <!-- Bootstrap -->
     <link href="<?= base_url('assets/public/css/bootstrap.min.css') ?>" rel="stylesheet" type="text/css" />
@@ -34,7 +34,7 @@
     <link href="<?= base_url('assets/public/css/materialdesignicons.min.css') ?>" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <!-- Css -->
-    <link href="<?= base_url('assets/public/css/style.min.css') ?>" rel="stylesheet" type="text/css" id="theme-opt" />
+    <link href="<?= base_url('assets/public/css/style.min.css') ?>?v=<?= filemtime('assets/public/css/style.min.css') ?>" rel="stylesheet" type="text/css" id="theme-opt" />
     <link href="<?= base_url('assets/public/css/colors/default.css') ?>" rel="stylesheet" id="color-opt">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 

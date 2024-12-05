@@ -24,7 +24,7 @@
 .sidebar .widget .tagcloud > a:hover,
 .ribbon.ribbon-primary span,
 .nav-pills .nav-link.active {
-    background-color: #5368f1 !important;
+    background-color: var(--lg-primary) !important;
 }
 
 .text-primary,
@@ -57,7 +57,7 @@
 .media-list .comment-desk a:hover,
 .breadcrumb .breadcrumb-item.active,
 .breadcrumb .breadcrumb-item a:hover {
-    color: #5368f1 !important;
+    color: var(--lg-primary) !important;
 }
 
 .btn-primary,
@@ -86,7 +86,7 @@
 #topnav.scroll .navigation-menu > li:hover > .menu-arrow, #topnav.scroll .navigation-menu > li.active > .menu-arrow,
 #topnav.nav-sticky .navigation-menu.nav-light > li:hover > .menu-arrow, #topnav.nav-sticky .navigation-menu.nav-light > li.active > .menu-arrow,
 #topnav .navigation-menu > li:hover > .menu-arrow {
-    border-color: #5368f1 !important;
+    border-color: var(--lg-primary) !important;
 }
 
 a.text-primary:hover, 
@@ -94,17 +94,17 @@ a.text-primary:focus,
 a.text-primary:active, 
 a.text-primary.active, 
 a.text-primary.focus {
-    color: #243fed !important;
+    color: var(--lg-primary) !important;
 }
 
 .ribbon.ribbon-primary span:before {
-    border-left-color: #243fed;
-    border-top-color: #243fed;
+    border-left-color: var(--lg-primary);
+    border-top-color: var(--lg-primary);
 }
 
 .ribbon.ribbon-primary span:after {
-    border-right-color: #243fed;
-    border-top-color: #243fed;
+    border-right-color: var(--lg-primary);
+    border-top-color: var(--lg-primary);
 }
 
 .btn-primary:hover, 
@@ -112,8 +112,8 @@ a.text-primary.focus {
 .btn-primary:active, 
 .btn-primary.active, 
 .btn-primary.focus {
-    background-color: #243fed !important;
-    border-color: #243fed !important;
+    background-color: var(--lg-primary) !important;
+    border-color: var(--lg-primary) !important;
 }
 
 .btn-primary,
@@ -128,7 +128,7 @@ a.text-primary.focus {
 .btn-outline-primary.active, 
 .btn-outline-primary.focus, 
 .btn-outline-primary:not(:disabled):not(.disabled):active {
-    box-shadow: 0 3px 7px rgba(83, 104, 241, 0.5) !important;
+    box-shadow: 0 3px 7px var(--lg-primary) !important;
 }
 
 .btn-soft-primary {
@@ -147,7 +147,7 @@ a.text-primary.focus {
 }
 
 .pagination .page-item .page-link:hover {
-    border-color: rgba(83, 104, 241, 0.9);
+    border-color:var(--lg-primary);
 }
 
 .services .icon {
@@ -156,13 +156,13 @@ a.text-primary.focus {
 }
 
 .play-icon i {
-    -webkit-text-stroke: 2px #5368f1;
+    -webkit-text-stroke: 2px var(--lg-primary);
     -webkit-text-fill-color: transparent;
 }
 
 .play-icon i:hover {
-    -webkit-text-stroke: 2px #5368f1;
-    -webkit-text-fill-color: #5368f1;
+    -webkit-text-stroke: 2px var(--lg-primary);
+    -webkit-text-fill-color: var(--lg-primary);
 }
 
 .tns-nav button {
@@ -170,14 +170,14 @@ a.text-primary.focus {
 }
 
 .gradient-overlay {
-    background: linear-gradient(to right, #b8e2f0, #5368f1) !important;
+    background: linear-gradient(to right, #b8e2f0, var(--lg-primary)) !important;
 }
 .ribbon.ribbon-primary span:before {
-    border-left-color: #5368f1;
-    border-top-color: #5368f1;
+    border-left-color: var(--lg-primary);
+    border-top-color: var(--lg-primary);
 }
 
 .ribbon.ribbon-primary span:after {
-    border-right-color: #5368f1;
-    border-top-color: #5368f1;
+    border-right-color: var(--lg-primary);
+    border-top-color: var(--lg-primary);
 }

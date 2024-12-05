@@ -4,8 +4,8 @@
         <!-- Logo container-->
         <a class="logo" href="<?= site_url('/') ?>">
             <span class="logo-light-mode">
-                <img src="<?= base_url('assets/public/images/logo-dark.png') ?>" class="l-dark" height="30" alt="">
-                <img src="<?= base_url('assets/public/images/logo-light.png') ?>" class="l-light" height="30" alt="">
+                <img src="<?= base_url('assets/public/images/logo-dark.png') ?>" class="l-dark" height="40" style="border-radius: 4px;"  alt="">
+                <img src="<?= base_url('assets/public/images/logo-dark.png') ?>" class="l-light" height="40" style="border-radius: 4px;"  alt="">
             </span>
             <img src="images/logo-light.png" height="30" class="logo-dark-mode" alt="">
         </a>
@@ -38,7 +38,7 @@
                 </div>
             </li>
             <?php else: ?>
-                <li><a href="<?= site_url('login') ?>" class="sub-menu-item btn bg-white">Sign-In</a></li>
+                <li><a href="<?= site_url('login') ?>" class="sub-menu-item btn lg-primary text-white btn-rds">Sign-In</a></li>
             <?php endif; ?>
         </ul><!--end login button-->
 

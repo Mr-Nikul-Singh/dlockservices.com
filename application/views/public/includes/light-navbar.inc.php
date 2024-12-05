@@ -3,9 +3,9 @@
         <div class="container">
             <!-- Logo container-->
             <a class="logo" href="<?= site_url('/') ?>">
-                <img src="<?= base_url('assets/public/images/logo-dark.png') ?>" height="30" class="logo-light-mode" alt="">
-                <img src="<?= base_url('assets/public/images/logo-light.png') ?>" height="30" class="logo-dark-mode" alt="">
-            </a>                 
+                <img src="<?= base_url('assets/public/images/logo-dark.png') ?>" height="40" style="border-radius: 4px;" class="logo-light-mode" alt="">
+                <img src="<?= base_url('assets/public/images/logo-dark.png') ?>" height="40" style="border-radius: 4px;"  class="logo-dark-mode" alt="">
+            </a>
             <div class="menu-extras">
                 <div class="menu-item">
                     <!-- Mobile menu toggle-->
@@ -34,7 +34,7 @@
                     </div>
                 </li>
                 <?php else: ?>
-                    <li><a href="<?= site_url('login') ?>" class="sub-menu-item btn bg-primary text-white">Sign-In</a></li>
+                    <li><a href="<?= site_url('login') ?>" class="sub-menu-item btn-rds btn lg-primary text-white">Sign-In</a></li>
                 <?php endif; ?>
             </ul><!--end login button-->
     

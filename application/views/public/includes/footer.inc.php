@@ -118,7 +118,7 @@
                 <div class="row text-center">
                     <div class="col-sm-6 col-md-7">
                         <div class="text-sm-start">
-                            <p class="mb-0 text-foot">© <script>document.write(new Date().getFullYear())</script> <a href="https://racoonpy.com/" target="_blank" class="text-reset">Dlockservices INC</a>.</p>
+                            <p class="mb-0 text-foot">© <script>document.write(new Date().getFullYear())</script> <a href="https://racoonpy.com/" target="_blank" class="text-reset">dlockservices.com</a>.</p>
                         </div>
                     </div><!--end col-->
 
