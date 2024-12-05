@@ -138,7 +138,7 @@
                                                 <!-- <td><?= truncate_text(decode($val->content),26) ?></td> -->
                                                 <td><?= $val->name ?></td>
                                                 <td><?= $val->author ?></td>
-                                                <td><?= ($val->status == 'publish') ? '<span class="badge bg-success-transparent">Pulished</span>' : '<span class="badge bg-danger-transparent">Draft</span>' ?></td>
+                                                <td><?= ($val->status == 'published') ? '<span class="badge bg-success-transparent">Pulished</span>' : '<span class="badge bg-danger-transparent">Draft</span>' ?></td>
                                                 <td><span class="badge bg-warning-transparent"><?= (date('l',strtotime($val->created_at))) ?></span> <?= $val->created_at ?></td>
                                                 <!-- <td><span class="badge bg-warning-transparent"><?= (date('l',strtotime($val->updated_at))) ?></span> <?= $val->updated_at ?></td> -->
 
