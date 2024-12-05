@@ -13,7 +13,7 @@
     <link rel="canonical" href="https://www.racoonpy.com/" />
 
     <!-- Favicon -->
-    <link rel="icon" href="<?= base_url('assets/logo/favicon.png') ?>" type="image/x-icon">
+    <link rel="icon" href="<?= base_url('assets/meta/favicon_1733428599.png') ?>" type="image/x-icon">
 
     <!-- Main Theme Js -->
     <script src="<?= base_url('assets/js/authentication-main.js') ?>"></script>
