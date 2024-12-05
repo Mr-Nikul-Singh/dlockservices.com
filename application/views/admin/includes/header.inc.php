@@ -1,7 +1,7 @@
 <?php //header('Refresh: 2') ?>
 <!DOCTYPE html>
 <!-- doublemenu /detached -->
-<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-menu-styles="dark" data-vertical-style="" data-header-position="fixed" loader="enable" data-header-styles="color" data-page-style="classic0">
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-menu-styles="light" data-vertical-style="" data-header-position="fixed" loader="enable" data-header-styles="color" data-page-style="classic0">
 
 <head>
   	<meta charset="utf-8">
@@ -12,7 +12,7 @@
 	<meta content="A powerful CRM software for managing customer relationships, tracking leads, and streamlining your business operations." name="description">
 
 	<!-- Favicon -->
-    <link rel="icon" href="<?= base_url('assets/images/brand-logos/fav.ico') ?>?v=<?= filemtime('assets/logo/favicon.png') ?>" type="image/x-icon">
+    <link rel="icon" href="<?= base_url('assets/meta/favicon_1733428599.png') ?>?v=<?= filemtime('assets/logo/favicon.png') ?>" type="image/x-icon">
     <!-- Choices JS -->
     <script src="<?= base_url('assets/libs/choices.js/public/assets/scripts/choices.min.js') ?>"></script>
 
