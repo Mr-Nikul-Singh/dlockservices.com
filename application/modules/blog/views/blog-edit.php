@@ -86,7 +86,7 @@
                                             <label for="blogStatus" class="form-label">Status</label>
                                             <select class="form-control" id="status" name="status">
                                                 <option value="draft"  <?= $get_blog_data[0]->status == 'draft' ? 'selected' : '' ?>>Draft</option>
-                                                <option value="publish"  <?= $get_blog_data[0]->status == 'publish' ? 'selected' : '' ?>>Published</option>
+                                                <option value="published"  <?= $get_blog_data[0]->status == 'published' ? 'selected' : '' ?>>Published</option>
                                             </select>
                                             <small><?= form_error('status') ?></small>
                                         </div>

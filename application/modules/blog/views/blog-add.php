@@ -86,7 +86,7 @@
                                             <label for="blogStatus" class="form-label">Status</label>
                                             <select class="form-control" id="status" name="status">
                                                 <option value="draft">Draft</option>
-                                                <option value="publish">Published</option>
+                                                <option value="published">Published</option>
                                             </select>
                                             <small><?= form_error('status') ?></small>
                                         </div>
