@@ -3677,7 +3677,7 @@ ul .t-ltr-dark {
     height: 600px;
     background-size: contain;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat-x;
 }
 .carousel-item h2 {
     color: white;
