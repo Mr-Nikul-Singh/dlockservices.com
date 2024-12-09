@@ -149,4 +149,11 @@ class Setting extends CI_Controller {
         endif;
         $this->load->view('setting/update_profile',$data);
     }
+
+    public function pager_limit(){
+        if(!empty($this->input->post('limit'))):
+            $_SESSION['old_limit'] = 'new';
+            $_SESSION['limit'] = $this->input->post('limit');
+        endif;
+    }
 }

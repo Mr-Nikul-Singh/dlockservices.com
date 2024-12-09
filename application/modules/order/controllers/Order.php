@@ -267,4 +267,26 @@ class Order extends CI_Controller {
         $this->load->view('order/invoice',$data);
 		
 	}
+
+	public function update_order_status(){
+		$orderID     = $this->input->post('order_id');
+		$OrderStatus = $this->input->post('order_status');
+
+		$data = ['status' => $OrderStatus];
+
+		if($this->root->update_record('tbl_partial_orders',$data,$orderID) == true):
+			$response = array(
+				'message' => 'Updated successfully.',
+				'icon'    => 'check',
+				'status'  => '200'
+			);
+		else:
+			$response = array(
+				'message' => 'Technical issue!',
+				'icon'    => 'exclamation-triangle',
+				'status'  => '200'
+			);
+		endif;
+		echo json_encode($response);
+	}
 }

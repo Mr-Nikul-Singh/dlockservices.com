@@ -113,11 +113,12 @@
                                                     </th>
                                                     <th scope="col">No.</th>
                                                     <th scope="col">Name</th>
-                                                    <th scope="col">Phone</th>
-                                                    <th scope="col">Address</th>
+                                                    <!-- <th scope="col">Phone</th> -->
+                                                    <!-- <th scope="col">Address</th> -->
                                                     <th scope="col">City/State/Zip</th>
                                                     <th scope="col">Requirements</th>
                                                     <th scope="col">Date</th>
+                                                    <th scope="col">Status</th>
                                                     <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
@@ -141,11 +142,11 @@
                                                             <div class="lh-1">
                                                                 <span class="fs-11 text-muted"><?= $val->email ?></span>
                                                             </div>
+                                                            <span class="fs-11 text-muted"><em></em></span><b><?= ($val->phone) ? $val->phone : 'No Updated' ?></b>
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td><?= ($val->phone) ? $val->phone : 'No Updated' ?></td>
-                                                <td><?= ($val->address) ? $val->address : 'No Updated' ?></td>
+                                                <!-- <td><?= ($val->address) ? $val->address : 'No Updated' ?></td> -->
                                                 <td><?= $val->city.', '.$val->state.','.$val->zip ?></td>
                                                 <td>
                                                     <span><strong>Server Type :</strong>  <?= $val->serverType ?></span><br>
@@ -155,6 +156,27 @@
                                                     <span><strong>OS :</strong> <?= $val->os ?></span>
                                                 </td>
                                                 <td><?= $val->created_at ?></td>
+                                                <td class="text-center">
+                                                    <select name="" onchange="UpdateOrderStatus(<?= $val->id ?>,this.value)" class="form-control-sm">
+                                                        <option value="">Select</option>
+                                                        <option value="processing" <?= ($val->status == 'processing') ? 'selected' : '' ?>>Processing</option>
+                                                        <option value="delivered" <?= ($val->status == 'delivered') ? 'selected' : '' ?>>Delivered</option>
+                                                        <option value="canceled" <?= ($val->status == 'canceled') ? 'selected' : '' ?>>Canceled</option>
+                                                    </select>
+                                                    <br>
+                                                    <br>
+                                                    <?php
+                                                    $status = $val->status;
+                                                    ?>
+
+                                                    <span class="badge 
+                                                        <?= ($status == 'processing') ? 'bg-warning' : '' ?> 
+                                                        <?= ($status == 'delivered') ? 'bg-success' : '' ?> 
+                                                        <?= ($status == 'canceled') ? 'bg-danger' : '' ?>">
+                                                        <?= ucfirst($status) ?>
+                                                    </span>
+
+                                                </td>
                                                 <td>
                                                     <div class="hstack gap-2 fs-15">
                                                         <!-- <a aria-label="anchor" href="<?= site_url('retailer/view-retailer/'.$val->id) ?>"  class="btn btn-icon btn-wave waves-effect waves-light btn-sm btn-primary-light"><i class="ti ti-eye"></i></a> -->
@@ -205,18 +227,12 @@
 
 
 <script>
-    function update_access(id){
-        var val = 0;
-        if($('#login_access_'+id).is(':checked')){
-            val = '1'; 
-        }
-        else{
-            val = '0';
-        }
-        $.post("<?= site_url('retailer/login-access') ?>",
+    function UpdateOrderStatus(id,value){
+        // alert(id +'---' + value)
+        $.post("<?= site_url('order/update-order-status') ?>",
         {
-            id     : id,
-            status_: val
+            order_id     : id,
+            order_status: value
         },
         function(data, status){
             var json = $.parseJSON(data)

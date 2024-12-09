@@ -133,7 +133,7 @@
                                                     <?php endfor; ?>
                                                 </td>
                                                 <td><?= $val->review_text ?></td>
-                                                <td>
+                                                <td> 
                                                     <div class="hstack gap-2 fs-15">
                                                         <a aria-label="anchor" href="<?= site_url('review/edit-review/'.$val->id) ?>" class="btn btn-icon btn-wave waves-effect waves-light btn-sm btn-success-light"><i class="ti ti-edit"></i></a>
                                                         <a href="#" onclick="delete_record(<?= $val->id ?>,'review/delete-review')" class="btn btn-icon btn-wave waves-effect waves-light btn-sm btn-danger-light"><i class="ti ti-trash"></i></a>

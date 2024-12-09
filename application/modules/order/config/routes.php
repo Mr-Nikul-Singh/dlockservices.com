@@ -11,3 +11,4 @@ $route['order/view-order/(:num)']      = 'Order/view_order/$1';
 $route['order/delete-order']           = 'Order/delete_order';
 $route['order/export-retailers']       = 'Order/export_order';
 $route['order/payment-receipt/(:num)'] = 'Order/payment_receipt/$1';
+$route['order/update-order-status']    = 'Order/update_order_status';

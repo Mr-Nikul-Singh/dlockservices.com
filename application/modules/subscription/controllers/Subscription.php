@@ -64,8 +64,9 @@ class Subscription extends CI_Controller {
 
 			$encoded_features = json_encode($feature_pairs);
 
+
 			$data = [
-				'type'           => $this->input->post('plan_type', true),
+				'type'           => $this->input->post('billing_cycle', true),
 				'plan_price'     => $this->input->post('plan_price', true),
 				'hosting_type'   => $this->input->post('hosting_type', true),
 				'plan_name'      => $this->input->post('plan_name', true),

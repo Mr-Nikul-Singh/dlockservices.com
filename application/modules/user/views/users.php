@@ -118,8 +118,8 @@
                                                     <th scope="col">No.</th>
                                                     <th scope="col">Name</th>
                                                     <th scope="col">Phone</th>
-                                                    <th scope="col">DOB</th>
-                                                    <th scope="col">Role</th>
+                                                    <!-- <th scope="col">DOB</th> -->
+                                                    <!-- <th scope="col">Role</th> -->
                                                     <th scope="col">Customer ID</th>
                                                     <!-- <th scope="col">PIN</th> -->
                                                     <th scope="col">Account Status</th>
@@ -161,8 +161,8 @@
                                                 </td>
                                                 <!-- <td><?= $val->login_user_name ?></td> -->
                                                 <td><?= $val->contact ?></td>
-                                                <td><?= ($val->dob) ? $val->dob : 'No Updated' ?></td>
-                                                <td><span class='badge bg-info-transparent'><?= ucwords(str_replace('_', ' ', $val->type)) ?></span></td>
+                                                <!-- <td><?= ($val->dob) ? $val->dob : 'No Updated' ?></td> -->
+                                                <!-- <td><span class='badge bg-info-transparent'><?= ucwords(str_replace('_', ' ', $val->type)) ?></span></td> -->
                                                 <td><?= $val->customer_id ?></td>
                                                 <!-- <td><?= $val->secret_pin ?></td> -->
                                                 <td>
@@ -251,7 +251,7 @@
 
                                                 <td>
                                                     <div class="hstack gap-2 fs-15">
-                                                        <a aria-label="anchor" href="#"  class="btn btn-icon btn-wave waves-effect waves-light btn-sm btn-primary-light"><i class="ti ti-eye"></i></a>
+                                                        <a aria-label="anchor" href="<?= site_url('user/view-user/'.$val->id) ?>"  class="btn btn-icon btn-wave waves-effect waves-light btn-sm btn-primary-light"><i class="ti ti-eye"></i></a>
                                                         <a aria-label="anchor" href="<?= site_url('user/edit-user/'.$val->id) ?>" class="btn btn-icon btn-wave waves-effect waves-light btn-sm btn-success-light"><i class="ti ti-edit"></i></a>
                                                         <a aria-label="anchor" href="#" onclick="delete_record_()" class="btn btn-icon btn-wave waves-effect waves-light btn-sm btn-danger-light"><i class="ti ti-trash"></i></a>
                                                     </div>

@@ -15,4 +15,6 @@ $route['setting/generate-secret-pin']      = 'Setting/generate_secret_pin';
 
 
 $route['setting/site-settings'] = 'MetaSettings/settingofsite';
-$route['setting/save-setting'] = 'MetaSettings/save';
+$route['setting/save-setting']  = 'MetaSettings/save';
+$route['setting/pager-limit']   = 'Setting/pager_limit';
+

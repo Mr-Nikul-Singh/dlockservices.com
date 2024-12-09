@@ -26,7 +26,7 @@ function getImage(el){
 }
 
 function set_limit(val){
-    $.post("<?= site_url('master/pager-limit') ?>",
+    $.post("<?= site_url('setting/pager-limit') ?>",
     {
         limit: val,
     },

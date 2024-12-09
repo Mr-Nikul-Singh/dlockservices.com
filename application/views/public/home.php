@@ -1,5 +1,7 @@
 <?php require_once(APPPATH.'views/public/includes/header.inc.php'); ?>
 <?php require_once(APPPATH.'views/public/includes/navbar.inc.php'); ?>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
   <!-- Bootstrap CSS -->
 
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -303,6 +305,17 @@
                                             <?php endif; ?>
                                             <h6 class="text-primary mt-2 mb-0"><?= $reviewl->reviewer_name ?></h6>
                                             <!-- <small class="text-muted">C.E.O</small> -->
+                                             <center>
+                                                 <p class="">
+                                                     <?php for ($i = 1; $i <= 5; $i++): ?>
+                                                         <?php if ($i <= $reviewl->rating): ?>
+                                                             <i class="fas fa-star text-warning"></i> <!-- Filled star -->
+                                                         <?php else: ?>
+                                                             <i class="far fa-star text-warning"></i> <!-- Empty star -->
+                                                         <?php endif; ?>
+                                                     <?php endfor; ?>
+                                                 </p>
+                                             </center>
                                         </div>  
                                     </div>
                                 <?php endforeach; ?>

@@ -30,10 +30,8 @@ class Users extends CI_Controller {
 	public function view_user(int $id){
 		
         $this->title = "User Details";
-        $data['get_user_data'] = $this->user->get_user_details($id);
-		$creator_id = (!empty($data['get_user_data'][0]->created_by) ? $data['get_user_data'][0]->created_by : 0);
-        $data['get_creator_data'] = $this->root->get_record('tbl_users',"id = '{$creator_id}'",'type as creator_type|username as creator_name|email as creator_email|contact as creator_contact');
-		$this->load->view('user/view_user',$data);
+        $data['get_user_data'] = $this->user->get_users_where($id);
+		$this->load->view('user/user_view',$data);
 	}
 
 	/**

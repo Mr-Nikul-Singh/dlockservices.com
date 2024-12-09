@@ -98,7 +98,7 @@
                     <div class="col-md-8 col-12 mt-4 pt-2">
                         <div class="tab-content" id="pills-tabContent">
                             <div class="tab-pane fade show active shadow rounded p-4" id="dash" role="tabpanel" aria-labelledby="dashboard">
-                                <h6 class="text-muted">Hello <span class="text-dark"><?= ucwords(get_userdata('first_name')) ?> </span> (not <span class="text-dark"><?= ucwords(get_userdata('first_name')) ?>  <?= ucwords(get_userdata('last_name')) ?></span>? <a href="javascript:void(0)" class="text-danger">Log out</a>)</h6>
+                                <h6 class="text-muted">Hello <span class="text-dark"><?= ucwords(get_userdata('first_name')) ?> </span> (not <span class="text-dark"><?= ucwords(get_userdata('first_name')) ?>  <?= ucwords(get_userdata('last_name')) ?></span>? <a href="<?= site_url('flogout') ?>" class="text-danger">Log out</a>)</h6>
 
                                 <h6 class="text-muted mb-0">From your account dashboard you can view your <a href="javascript:void(0)" class="text-danger">recent orders</a>, manage your <a href="javascript:void(0)" class="text-danger">shipping and billing addresses</a>, and <a href="javascript:void(0)" class="text-danger">edit your password and account details</a>.</h6>
                             </div><!--end teb pane-->
@@ -121,7 +121,18 @@
                                                     <tr>
                                                         <th scope="row"><?= $orders->order_id ?></th>
                                                         <td><?= date('jS F Y', strtotime($orders->created_at)) ?></td>
-                                                        <td class="text-success"><?= ucwords($orders->status) ?></td>
+                                                        <td>
+                                                        <?php
+                                                        $status = $orders->status;
+                                                        ?>
+
+                                                        <span class="badge 
+                                                            <?= ($status == 'processing') ? 'bg-warning' : '' ?> 
+                                                            <?= ($status == 'delivered') ? 'bg-success' : '' ?> 
+                                                            <?= ($status == 'canceled') ? 'bg-danger' : '' ?>">
+                                                            <?= ucfirst($status) ?>
+                                                        </span>
+                                                        </td>
                                                         <!-- <td>$ 320 <span class="text-muted">for 2items</span></td> -->
                                                         <td><a href="<?= site_url('view-order/'.$orders->id) ?>" class="text-primary">View <i class="uil uil-arrow-right"></i></a></td>
                                                     </tr>
