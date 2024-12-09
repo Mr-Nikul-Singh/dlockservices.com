@@ -3688,7 +3688,7 @@ ul .t-ltr-dark {
     position: relative;
     width: 100%;
     overflow: hidden;
-    top: 73px;
+    /* top: 73px; */
 }
 
 @media (max-width: 768px) { /* Adjust the breakpoint if needed */
@@ -3722,4 +3722,85 @@ ul .t-ltr-dark {
 .carousel-indicators .active {
     background-color: var(--lg-primary); /* Set active indicator background color to dark blue */
     opacity: 1; /* Ensure active indicator is fully visible */
+}
+
+/* General button styles */
+.carousel-item a.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+/* Primary button (Get Started) */
+.carousel-item a.btn-primary {
+    background-color: #007bff; /* Adjust to your primary color */
+    border: none;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-item a.btn-primary:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    color: white;
+}
+
+/* Light button (Contact Us) */
+.carousel-item a.btn-light {
+    background-color: white;
+    border: 2px solid #007bff; /* Primary color for border */
+    color: #007bff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.carousel-item a.btn-light:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .carousel-item a.btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+.carousel-caption , .joky{
+    position: relative;
+    left: 60%;
+    top: 70%;
+    display: none !important; 
+    transform: translate(-60%, -70%);
+
+}
+/* .custom-buttons-container {
+    position: absolute;
+    bottom: 20px;
+    right: 20px; 
+    z-index: 1000; 
+} */
+
+.carousel {
+    /* margin-top: 56px; */
+}
+
+
+/* .joky {
+    align-items: flex-start;
+    right: 606px;
+    top: 106px;
+    position: absolute;
+} */
+
+.btn-roundb{
+    border-radius: 50px;
+}
+.btn-roundb-2{
+    border: 1px solid var(--lg-secondary) !important;
+}
+.btn-roundb-2:hover{
+    background-color: var(--lg-secondary) !important;
+    border: 1px solid var(--lg-primary) !important;
 }

@@ -2,51 +2,42 @@
 <?php require_once(APPPATH.'views/public/includes/navbar.inc.php'); ?>
   <!-- Bootstrap CSS -->
 
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active" style="background-image: url('<?= base_url('assets/public/banner/dlock_banner_1.jpg') ?>');">
-                    <div class="d-flex justify-content-center align-items-center h-100">
-                        <!-- <h2>Slider 1</h2> -->
-                         <a href="<?= site_url('contact-us') ?>" class="btn btn-light bg-white mx-1">Contact Now</a>
-                    </div>
-                </div>
-                <div class="carousel-item" style="background-image: url('<?= base_url('assets/public/banner/dlock_banner_2.jpg') ?>');">
-                    <div class="d-flex justify-content-center align-items-center h-100">
-                        <!-- <h2>Slider 2</h2> -->
-                        <a href="#plans" class="btn btn-primary mx-1">Get Started</a>
-                        <a href="<?= site_url('contact-us') ?>" class="btn btn-light mx-1">Contact Us</a>
-                    </div>
-                </div>
-                <div class="carousel-item" style="background-image: url('<?= base_url('assets/public/banner/dlock_banner_3.jpg') ?>');">
-                    <div class="d-flex justify-content-center align-items-center h-100">
-                        <!-- <h2>Slider 3</h2> -->
-                        <a href="#plans" class="btn btn-primary mx-1">Get Started</a>
-                        <a href="<?= site_url('contact-us') ?>" class="btn btn-light mx-1">Contact Us</a>
-                    </div>
-                </div>
-                <div class="carousel-item" style="background-image: url('<?= base_url('assets/public/banner/dlock_banner_4.jpg') ?>');">
-                    <div class="d-flex justify-content-center align-items-center h-100">
-                        <!-- <h2>Slider 4</h2> -->
-                        <a href="#plans" class="btn btn-primary mx-1">Get Started</a>
-                        <a href="<?= site_url('contact-us') ?>" class="btn btn-light mx-1">Contact Us</a>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
         </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="background-image: url('<?= base_url('assets/public/banner/dlock_banner_1.jpg') ?>'); background-size: contain; background-position: center;">
+            </div>
+            <div class="carousel-item" style="background-image: url('<?= base_url('assets/public/banner/dlock_banner_2.jpg') ?>'); background-size: contain; background-position: center;">
+            </div>
+            <div class="carousel-item" style="background-image: url('<?= base_url('assets/public/banner/dlock_banner_3.jpg') ?>'); background-size: contain; background-position: center;">
+            </div>
+            <div class="carousel-item" style="background-image: url('<?= base_url('assets/public/banner/dlock_banner_4.jpg') ?>'); background-size: contain; background-position: center;">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <br>
+    <br>
+    <div class="d-flex justify-content-center my-6">
+        <a href="#plans" class="btn btn-primary mx-1 btn-roundb">Get Started</a>
+        <a href="<?= site_url('contact-us') ?>" class="btn btn-light mx-1 btn-roundb btn-roundb-2">Contact Us</a>
+    </div>
+
+        
+ 
 
         <!-- Home Start -->
         <section class="bg-half-260 d-table w-100 bg-primary d-none" style="background: url('assets/public/images/bg/bg1.png') top center;" id="home">
