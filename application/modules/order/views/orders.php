@@ -139,10 +139,11 @@
                                                             <div class="lh-1">
                                                                 <span><?= ucwords(truncate_text($val->fullName,16)) ?></span>
                                                             </div>
+                                                            <span class="fs-11 text-muted">ORDER ID: <strong><?= ($val->order_id) ? $val->order_id : 'No Updated' ?></strong></span>
                                                             <div class="lh-1">
                                                                 <span class="fs-11 text-muted"><?= $val->email ?></span>
                                                             </div>
-                                                            <span class="fs-11 text-muted"><em></em></span><b><?= ($val->phone) ? $val->phone : 'No Updated' ?></b>
+                                                            <span class="fs-11 text-muted"><em><b><?= ($val->phone) ? $val->phone : 'No Updated' ?></b></em></span>
                                                         </div>
                                                     </div>
                                                 </td>

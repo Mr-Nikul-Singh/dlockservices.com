@@ -27,6 +27,7 @@ class Order_Model extends CI_Model{
 		if (!empty($filter)) { 
 			$this->db->group_start();
 			$this->db->like('tu.full_name', $filter);
+			$this->db->or_like('to.order_id', $filter);
 			$this->db->or_like('tu.email', $filter);
 			$this->db->or_like('tu.contact', $filter);
 			$this->db->or_like('tu.zip_code', $filter);
@@ -70,6 +71,7 @@ class Order_Model extends CI_Model{
 			$this->db->group_start();
 			$this->db->like('tu.full_name', $filter);
 			$this->db->or_like('tu.email', $filter);
+			$this->db->or_like('to.order_id', $filter);
 			$this->db->or_like('tu.contact', $filter);
 			$this->db->or_like('tu.zip_code', $filter);
 			$this->db->or_like('tu.address', $filter);
