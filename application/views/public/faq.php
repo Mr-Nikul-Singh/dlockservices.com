@@ -136,13 +136,27 @@
 
                     <div class="accordion mt-4 pt-2" id="accordionExample">
                         <div class="accordion-item rounded shadow bg-white">
+                            <h2 class="accordion-header" id="headingOne0">
+                                <button class="accordion-button border-0 bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne0"
+                                    aria-expanded="true" aria-controls="collapseOne0">
+                                    How do I pick the right hosting plan?
+                                </button>
+                            </h2>
+                            <div id="collapseOne0" class="accordion-collapse border-0 collapse show" aria-labelledby="headingOne0"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Think about what you need. For small websites or blogs, shared hosting works well. If your site gets more visitors or needs more power, go for VPS or cloud hosting. For big projects with high traffic, a dedicated server is the best option.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item rounded shadow bg-white">
                             <h2 class="accordion-header" id="headingOne">
                                 <button class="accordion-button border-0 bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
                                     aria-expanded="true" aria-controls="collapseOne">
                                     What is Dedicated Server?
                                 </button>
                             </h2>
-                            <div id="collapseOne" class="accordion-collapse border-0 collapse show" aria-labelledby="headingOne"
+                            <div id="collapseOne" class="accordion-collapse border-0 collapse" aria-labelledby="headingOne"
                                 data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.

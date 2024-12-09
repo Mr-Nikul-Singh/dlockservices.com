@@ -313,63 +313,301 @@
             </div><!--end container-->
 
             <div class="container mt-100 mt-60">
-                <div class="row align-items-center mb-4 pb-2">
-                    <div class="col-md-6">
-                        <div class="section-title">
-                            <h4 class="title mb-md-0 mb-4">Frequently Asked <br> Questions</h4>
+
+                <div class="accordion mt-4 pt-2" id="accordionExamplethree">
+                    <div class="accordion-item rounded shadow bg-white">
+                        <h2 class="accordion-header" id="headingOneo">
+                            <button class="accordion-button border-0 bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneo"
+                                aria-expanded="true" aria-controls="collapseOneo">
+                                Features
+                            </button>
+                        </h2>
+                        <div id="collapseOneo" class="accordion-collapse border-0 collapse show" aria-labelledby="headingOneo"
+                            data-bs-parent="#accordionExamplethree">
+                            <div class="accordion-body">
+                                <ul class="list-unstyled mb-0">
+                                    <li class="text-muted my-2"><i data-feather="arrow-right-circle" class="fea icon-ex-md text-primary me-2"></i>CentOS 6/CentOS 7/Ubuntu 16.04/Fedora 23/Debian 8</li>
+                                    <li class="text-muted my-2"><i data-feather="arrow-right-circle" class="fea icon-ex-md text-primary me-2"></i>Multiple locations</li>
+                                    <li class="text-muted my-2"><i data-feather="arrow-right-circle" class="fea icon-ex-md text-primary me-2"></i>Private Network</li>
+                                    <li class="text-muted my-2"><i data-feather="arrow-right-circle" class="fea icon-ex-md text-primary me-2"></i>Quick VNC access</li>
+                                    <li class="text-muted my-2"><i data-feather="arrow-right-circle" class="fea icon-ex-md text-primary me-2"></i>rDNS support</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="col-md-6">
-                        <div class="section-title">
-                            <p class="text-muted para-desc mb-0">Explore answers to common questions and find out how our platform can help bring your ideas to life with ease and innovation.</p>
+                    <div class="accordion-item rounded shadow bg-white mt-2">
+                        <h2 class="accordion-header" id="headingTwoo">
+                            <button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwoo" aria-expanded="false" aria-controls="collapseTwoo">
+                                Performance
+                            </button>
+                        </h2>
+                        <div id="collapseTwoo" class="accordion-collapse border-0 collapse" aria-labelledby="headingTwoo"
+                            data-bs-parent="#accordionExamplethree">
+                            <div class="accordion-body">
+                                <ul class="list-unstyled mb-0">
+                                    <li class="text-muted my-2"><i data-feather="arrow-right-circle" class="fea icon-ex-md text-primary me-2"></i>Top notch network built with Tier 1 ISPs</li>
+                                    <li class="text-muted my-2"><i data-feather="arrow-right-circle" class="fea icon-ex-md text-primary me-2"></i>SSD Storage</li>
+                                    <li class="text-muted my-2"><i data-feather="arrow-right-circle" class="fea icon-ex-md text-primary me-2"></i>Tier IV Data Center</li>
+                                    <li class="text-muted my-2"><i data-feather="arrow-right-circle" class="fea icon-ex-md text-primary me-2"></i>Neustar’s DDoS protection</li>
+                                    <li class="text-muted my-2"><i data-feather="arrow-right-circle" class="fea icon-ex-md text-primary me-2"></i>Backed by Juniper Networks</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item rounded shadow bg-white mt-2">
+                        <h2 class="accordion-header" id="headingThreeo">
+                            <button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThreeo" aria-expanded="false" aria-controls="collapseThreeo">
+                                Boosters
+                            </button>
+                        </h2>
+                        <div id="collapseThreeo" class="accordion-collapse border-0 collapse" aria-labelledby="headingThreeo"
+                            data-bs-parent="#accordionExamplethree">
+                            <div class="accordion-body">
+                                <ul class="list-unstyled mb-0">
+                                    <li class="text-muted my-2"><i data-feather="arrow-right-circle" class="fea icon-ex-md text-primary me-2"></i>cPanel (only with CentOS 7)</li>
+                                    <li class="text-muted my-2"><i data-feather="arrow-right-circle" class="fea icon-ex-md text-primary me-2"></i>Plesk Onyx</li>
+                                    <li class="text-muted my-2"><i data-feather="arrow-right-circle" class="fea icon-ex-md text-primary me-2"></i>WHMCS</li>
+                                    <li class="text-muted my-2"><i data-feather="arrow-right-circle" class="fea icon-ex-md text-primary me-2"></i>SAN Storage</li>
+                                    <li class="text-muted my-2"><i data-feather="arrow-right-circle" class="fea icon-ex-md text-primary me-2"></i>CDN</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item rounded shadow bg-white mt-2">
+                        <h2 class="accordion-header" id="headingFouro">
+                            <button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFouro" aria-expanded="false" aria-controls="collapseFouro">
+                                Semi-Managed Support
+                            </button>
+                        </h2>
+                        <div id="collapseFouro" class="accordion-collapse border-0 collapse" aria-labelledby="headingFouro"
+                            data-bs-parent="#accordionExamplethree">
+                            <div class="accordion-body">
+                                <ul class="list-unstyled mb-0">
+                                    <li class="text-muted my-2"><i data-feather="arrow-right-circle" class="fea icon-ex-md text-primary me-2"></i>Free cPanel Migrations</li>
+                                    <li class="text-muted my-2"><i data-feather="arrow-right-circle" class="fea icon-ex-md text-primary me-2"></i>Plesk Migrations</li>
+                                    <li class="text-muted my-2"><i data-feather="arrow-right-circle" class="fea icon-ex-md text-primary me-2"></i>Boot, Login, Network, Hardware, Rebuild</li>
+                                    <li class="text-muted my-2"><i data-feather="arrow-right-circle" class="fea icon-ex-md text-primary me-2"></i>Basic server optimisation, patching & hardening</li>
+                                    <li class="text-muted my-2"><i data-feather="arrow-right-circle" class="fea icon-ex-md text-primary me-2"></i>Basic setup of Applications & Firewall</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="row">
-                    <div class="col-md-6 col-12 mt-4 pt-2">
-                        <div class="d-flex">
-                            <i data-feather="help-circle" class="fea icon-ex-md text-primary me-2 mt-1"></i>
-                            <div class="flex-1">
-                                <h5 class="mt-0">What are the benefits of using a dedicated server?</h5>
-                                <p class="answer text-muted mb-0">Dedicated servers provide exclusive access to all resources, offering enhanced performance, security, and customization options. They're ideal for high-traffic websites and applications that require reliable uptime and fast processing speeds.</p>
+
+                <div class="section-title mt-5" id="general">
+                    <h4>General Questions</h4>
+                </div>
+
+                <div class="accordion mt-4 pt-2" id="accordionExample">
+
+                    <div class="accordion-item rounded shadow bg-white">
+                        <h2 class="accordion-header" id="headingOne0">
+                            <button class="accordion-button border-0 bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne0"
+                                aria-expanded="true" aria-controls="collapseOne0">
+                                How do I pick the right hosting plan?
+                            </button>
+                        </h2>
+                        <div id="collapseOne0" class="accordion-collapse border-0 collapse show" aria-labelledby="headingOne0"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Think about what you need. For small websites or blogs, shared hosting works well. If your site gets more visitors or needs more power, go for VPS or cloud hosting. For big projects with high traffic, a dedicated server is the best option.
                             </div>
                         </div>
-                    </div><!--end col-->
-                    
-                    <div class="col-md-6 col-12 mt-4 pt-2">
-                        <div class="d-flex">
-                            <i data-feather="help-circle" class="fea icon-ex-md text-primary me-2 mt-1"></i>
-                            <div class="flex-1">
-                                <h5 class="mt-0"> How do I ensure my server is secure?</h5>
-                                <p class="answer text-muted mb-0">To enhance server security, regularly update your software, use strong passwords, implement firewalls, and consider using SSL certificates. Regular backups and monitoring for suspicious activity are also crucial for maintaining security.</p>
+                    </div>
+
+                    <div class="accordion-item rounded shadow bg-white">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button border-0 bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                aria-expanded="true" aria-controls="collapseOne">
+                                What is Dedicated Server?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse border-0 collapse" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
                             </div>
                         </div>
-                    </div><!--end col-->
-                    
-                    <div class="col-md-6 col-12 mt-4 pt-2">
-                        <div class="d-flex">
-                            <i data-feather="help-circle" class="fea icon-ex-md text-primary me-2 mt-1"></i>
-                            <div class="flex-1">
-                                <h5 class="mt-0"> What is the difference between VPS and cloud hosting?</h5>
-                                <p class="answer text-muted mb-0">VPS (Virtual Private Server) hosting provides dedicated resources on a physical server, allowing for greater control and performance than shared hosting. Cloud hosting, on the other hand, utilizes multiple servers to distribute resources, offering scalability and redundancy, making it suitable for fluctuating workloads.
-                                </p>
+                    </div>
+                    <div class="accordion-item rounded shadow bg-white mt-2">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Do I need a Dedicated Server?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse border-0 collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
                             </div>
                         </div>
-                    </div><!--end col-->
-                    
-                    <div class="col-md-6 col-12 mt-4 pt-2">
-                        <div class="d-flex">
-                            <i data-feather="help-circle" class="fea icon-ex-md text-primary me-2 mt-1"></i>
-                            <div class="flex-1">
-                                <h5 class="mt-0"> Can I upgrade my server plan later?</h5>
-                                <p class="answer text-muted mb-0">Yes, most hosting providers allow you to upgrade your server plan as your needs grow. You can typically move from shared hosting to VPS or from VPS to dedicated hosting with minimal downtime.
-                                </p>
+                    </div>
+                    <div class="accordion-item rounded shadow bg-white mt-2">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                How can I get my website transferred for free?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse border-0 collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
                             </div>
                         </div>
-                    </div><!--end col-->
-                </div><!--end row-->
+                    </div>
+                    <div class="accordion-item rounded shadow bg-white mt-2">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                What level of access do I get with my Dedicated Server?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse border-0 collapse" aria-labelledby="headingFour"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item rounded shadow bg-white mt-2">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                Which control panels are provided?
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse border-0 collapse" aria-labelledby="headingFive"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item rounded shadow bg-white mt-2">
+                        <h2 class="accordion-header" id="headingSix">
+                            <button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                Do you offer any billing panels?
+                            </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse border-0 collapse" aria-labelledby="headingSix"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item rounded shadow bg-white mt-2">
+                        <h2 class="accordion-header" id="headingSeven">
+                            <button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                How long will it take for my server to be ready for use?
+                            </button>
+                        </h2>
+                        <div id="collapseSeven" class="accordion-collapse border-0 collapse" aria-labelledby="headingSeven"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item rounded shadow bg-white mt-2">
+                        <h2 class="accordion-header" id="headingEight">
+                            <button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                How do I access my Dedicated Server?
+                            </button>
+                        </h2>
+                        <div id="collapseEight" class="accordion-collapse border-0 collapse" aria-labelledby="headingEight"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-title mt-5" id="payment">
+                    <h4>Payments Questions</h4>
+                </div>
+
+                <div class="accordion mt-4 pt-2" id="accordionExampletwo">
+                    <div class="accordion-item rounded shadow bg-white">
+                        <h2 class="accordion-header" id="headingfiveo">
+                            <button class="accordion-button border-0 bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefiveo"
+                                aria-expanded="true" aria-controls="collapsefiveo">
+                                How our Dlockservices work ?
+                            </button>
+                        </h2>
+                        <div id="collapsefiveo" class="accordion-collapse border-0 collapse show" aria-labelledby="headingfiveo"
+                            data-bs-parent="#accordionExampletwo">
+                            <div class="accordion-body">
+                                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item rounded shadow bg-white mt-2">
+                        <h2 class="accordion-header" id="headingsix">
+                            <button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapsesix" aria-expanded="false" aria-controls="collapsesix">
+                                What is the main process open account ?
+                            </button>
+                        </h2>
+                        <div id="collapsesix" class="accordion-collapse border-0 collapse" aria-labelledby="headingsix"
+                            data-bs-parent="#accordionExampletwo">
+                            <div class="accordion-body">
+                                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item rounded shadow bg-white mt-2">
+                        <h2 class="accordion-header" id="headingseven">
+                            <button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseseven" aria-expanded="false" aria-controls="collapseseven">
+                                How to make unlimited data entry ?
+                            </button>
+                        </h2>
+                        <div id="collapseseven" class="accordion-collapse border-0 collapse" aria-labelledby="headingseven"
+                            data-bs-parent="#accordionExampletwo">
+                            <div class="accordion-body">
+                                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item rounded shadow bg-white mt-2">
+                        <h2 class="accordion-header" id="headingeight">
+                            <button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseeight" aria-expanded="false" aria-controls="collapseeight">
+                                Is Dlockservices safer to use with my account ?
+                            </button>
+                        </h2>
+                        <div id="collapseeight" class="accordion-collapse border-0 collapse" aria-labelledby="headingeight"
+                            data-bs-parent="#accordionExampletwo">
+                            <div class="accordion-body">
+                                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item rounded shadow bg-white mt-2">
+                        <h2 class="accordion-header" id="headingnine">
+                            <button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapsenine" aria-expanded="false" aria-controls="collapsenine">
+                                How can i contact your technical team ?
+                            </button>
+                        </h2>
+                        <div id="collapsenine" class="accordion-collapse border-0 collapse" aria-labelledby="headingnine"
+                            data-bs-parent="#accordionExampletwo">
+                            <div class="accordion-body">
+                                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div><!--end container-->
         </section><!--end section-->

@@ -12,7 +12,7 @@
                             <!-- <p class="text-muted para-desc mt-3 mb-0">Brief details of working with hosting</p>  -->
                             <nav aria-label="breadcrumb" class="d-inline-block mt-4">
                                 <ul class="breadcrumb mb-0">
-                                    <li class="breadcrumb-item"><a href="<?= site_url('/') ?>">Dlckservices</a></li>
+                                    <li class="breadcrumb-item"><a href="<?= site_url('/') ?>">Dlockservices</a></li>
                                     <li class="breadcrumb-item"><a href="<?= site_url('blog') ?>">Blog</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Blog Details</li>
                                 </ul>
