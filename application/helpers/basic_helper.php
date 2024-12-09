@@ -51,7 +51,7 @@ function slug_generate($title) {
     $slug = strtolower($slug);
     
     // Limit the slug to 32 characters
-    $slug = substr($slug, 0, 32);
+    // $slug = substr($slug, 0, 32);
     
     return $slug;
 }
