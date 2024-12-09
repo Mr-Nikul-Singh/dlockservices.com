@@ -3710,7 +3710,7 @@ ul .t-ltr-dark {
     margin-left: 3px;
     text-indent: -999px;
     cursor: pointer;
-    background-color: var(--lg-primary);
+    background-color: var(--lg-secondary);
     background-clip: padding-box;
     border: 0;
     border-top: 10px solid transparent;
