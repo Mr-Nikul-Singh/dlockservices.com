@@ -3676,12 +3676,19 @@ ul .t-ltr-dark {
 .carousel-item {
     height: 600px;
     background-size: contain;
-    background-position: center;
+    /* background-position: center; */
     background-repeat: repeat-x;
 }
 .carousel-item h2 {
     color: white;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    top: 73px;
 }
 
 @media (max-width: 768px) { /* Adjust the breakpoint if needed */
