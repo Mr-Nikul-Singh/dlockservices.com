@@ -13,21 +13,25 @@
                 <div class="carousel-item active" style="background-image: url('<?= base_url('assets/public/banner/dlock_banner_1.jpg') ?>');">
                     <div class="d-flex justify-content-center align-items-center h-100">
                         <!-- <h2>Slider 1</h2> -->
+                         <a href="<?= site_url('contact-us') ?>" class="btn btn-light bg-white mx-1">Contact Now</a>
                     </div>
                 </div>
                 <div class="carousel-item" style="background-image: url('<?= base_url('assets/public/banner/dlock_banner_2.jpg') ?>');">
                     <div class="d-flex justify-content-center align-items-center h-100">
                         <!-- <h2>Slider 2</h2> -->
+                        <a href="<?= site_url('contact-us') ?>" class="btn btn-light bg-white mx-1">Contact Now</a>
                     </div>
                 </div>
                 <div class="carousel-item" style="background-image: url('<?= base_url('assets/public/banner/dlock_banner_3.jpg') ?>');">
                     <div class="d-flex justify-content-center align-items-center h-100">
                         <!-- <h2>Slider 3</h2> -->
+                        <a href="<?= site_url('contact-us') ?>" class="btn btn-light bg-white mx-1">Contact Now</a>
                     </div>
                 </div>
                 <div class="carousel-item" style="background-image: url('<?= base_url('assets/public/banner/dlock_banner_4.jpg') ?>');">
                     <div class="d-flex justify-content-center align-items-center h-100">
                         <!-- <h2>Slider 4</h2> -->
+                        <a href="<?= site_url('contact-us') ?>" class="btn btn-light bg-white mx-1">Contact Now</a>
                     </div>
                 </div>
             </div>
