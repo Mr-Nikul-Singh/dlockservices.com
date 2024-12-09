@@ -3672,3 +3672,47 @@ ul .t-ltr-dark {
         display: none;
     }
 }
+
+.carousel-item {
+    height: 600px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.carousel-item h2 {
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 768px) { /* Adjust the breakpoint if needed */
+    .carousel-item {
+        height: 279px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+.carousel-indicators [data-bs-target] {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: 30px;
+    height: 3px;
+    padding: 0;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: var(--lg-primary);
+    background-clip: padding-box;
+    border: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    opacity: .5;
+    transition: opacity .6s ease;
+}
+
+.carousel-indicators .active {
+    background-color: var(--lg-primary); /* Set active indicator background color to dark blue */
+    opacity: 1; /* Ensure active indicator is fully visible */
+}
