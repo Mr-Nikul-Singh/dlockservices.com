@@ -545,7 +545,7 @@
                     </div>
                 </div>
 
-                <div class="section-title mt-5" id="payment">
+                <div class="section-title mt-5 d-none" id="payment">
                     <h4>Payments Questions</h4>
                 </div>
 
