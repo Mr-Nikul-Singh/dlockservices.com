@@ -346,4 +346,13 @@ class Subscription extends CI_Controller {
 			}
 		}	
 	}
+
+	public function configurations(){
+		$this->title = 'Configurations';
+		$data['get_plans'] = $this->root->get_record('tbl_subscriptions');
+		$this->load->view('subscription/add-configurations',$data);
+	}
+
+	public function add_configurations(){
+	}
 }

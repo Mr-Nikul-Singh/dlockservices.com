@@ -407,7 +407,7 @@
 
                             <!-- Start::Settings Slide -->
                             <?php
-                                $settingsHookKey = array('add-plan','plans','view-subscription','edit-plan');
+                                $settingsHookKey = array('add-plan','plans','view-subscription','edit-plan','configurations');
                                 $settingsActiveHook = in_array($this->uri->segment(2), $settingsHookKey) ? 'active open' : '';
                             ?>
                             <li class="slide has-sub <?= $settingsActiveHook ?>">
@@ -423,6 +423,9 @@
                                     </li>
                                     <li class="slide">
                                         <a href="<?= site_url('subscription/plans') ?>" class="side-menu__item <?= $this->uri->segment(2) == 'plans' ? 'active' : '' ?>">Manage</a>
+                                    </li>
+                                    <li class="slide">
+                                        <a href="<?= site_url('subscription/configurations') ?>" class="side-menu__item <?= $this->uri->segment(2) == 'configurations' ? 'active' : '' ?>">Manage Configurations</a>
                                     </li>
                                 </ul>
                             </li>

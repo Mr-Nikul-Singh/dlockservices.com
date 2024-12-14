@@ -70,7 +70,7 @@
                                                                         <div class="pb-1 pt-0 d-fex text-center">
                                                                             <div class="">
                                                                                 <p class="mt-2 text-xxl fw-semibold mb-0">Rs.<?= $plns->plan_price ?></p>
-                                                                                <p class="text-muted- op-5 fs-11 fw-semibold mb-0" style="font-size: 16px;"><strong><?= $plns->type ?> / <?= ucwords($plns->hosting_type) ?></strong></p>
+                                                                                <p class="text-muted- op-5 fs-11 fw-semibold mb-0" style="font-size: 16px;"><strong><?= $plns->type ?> / <span class="text-primary"><?= ucwords($plns->hosting_type) ?></span></strong></p>
                                                                             </div>
                                                                         </div>
                                                                         <!-- <div class="pricing-svg1 ms-auto">
