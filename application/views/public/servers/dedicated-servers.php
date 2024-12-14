@@ -97,8 +97,9 @@
     </section><!--end section-->
     <!-- End features -->
 
-    <!-- Price Start -->
-    <section class="section bg-light" id="plans">
+
+    <!-- Start Pricing -->
+    <section class="section bg-light">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12">
@@ -109,45 +110,69 @@
                 </div><!--end col-->
             </div><!--end row-->
 
-
-            <div class="row">   
-                <?php if(!empty($get_plans)): ?>
-                <?php foreach($get_plans as $vle): ?>              
-                    <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
-                        <div class="card pricing hosting-rate border-0 rounded overflow-hidden">
-                            <div class="plan-name p-4 border-bottom">
-                                <h4 class="title mb-3"><?= ucwords($vle->plan_name) ?></h4>
-                                <!-- <p class="para text-muted mb-0">We offers a <strong>free month</strong> of service for new customers.</p> -->
-                            </div>
-                            <div class="card-body p-4">
-                                <div class="d-flex mb-3">
-                                    <span class="h6 text-muted mb-0 mt-2">Rs.</span>
-                                    <span class="price text-primary h1 mb-0"><?= ucwords($vle->plan_price) ?></span>
-                                    <span class="h6 text-muted align-self-end mb-1">/<?= ucwords($vle->type) ?></span>
-                                </div>                                                    
-                                <ul class="feature-list list-unstyled mb-0">
-                                    <?php $decodeFeatures = json_decode($vle->key_features); ?>
-                                    <?php foreach($decodeFeatures as $key => $vls): ?>
-                                        <li class="text-muted"><i class="mdi mdi-arrow-right text-primary me-2"></i><span class="fw-bold"><?= $key ?></span> <?= $vls ?></li>
-                                    <?php endforeach; ?>
-                                </ul>
-                                    <a href="<?= site_url('billing-details/'.$vle->id) ?>" class="btn btn-primary mt-4">Buy Now</a>
-                            </div>
-                        </div>
-                    </div><!--end col-->
-                <?php endforeach; ?>
-                <?php endif; ?>
-                
-                <div class="col-12 mt-4 pt-2 text-center">
-                    <div class="alert alert-light alert-pills mb-0 shadow" role="alert">
-                        <span class="badge rounded-pill bg-primary me-1">Pricing</span>
-                        <span class="content"> <a href="javascript:void(0)" class="text-primary">See plan details</a> And Pricing for more Details</span>
-                    </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-5 mt-4 pt-2 text-center">
+                    <ul class="nav nav-pills nav-justified flex-sm-row rounded px-0" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link rounded" id="pills-one-tab" data-bs-toggle="pill" href="#pills-one" role="tab" aria-controls="pills-one" aria-selected="false">
+                                <div class="text-center py-2">
+                                    <img src="<?= base_url('assets/public/images/icons/india.svg') ?>" class="avatar avatar-md-sm" alt="">
+                                    <h4 class="title fw-normal mt-3 mb-0">India</h4>
+                                </div>
+                            </a><!--end nav link-->
+                        </li><!--end nav item-->
+                    </ul>
                 </div><!--end col-->
+            </div><!--end row-->
+
+            <div class="row">
+                <div class="col-12 mt-4 pt-2">
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-one" role="tabpanel" aria-labelledby="pills-one-tab">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="table-responsive bg-white shadow rounded">
+                                        <table class="table table-center table-padding mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th class="border-bottom py-3" style="min-width: 200px;">PLANS</th>
+                                                    <th class="border-bottom text-center py-3" style="min-width: 160px;">PROCESSOR</th>
+                                                    <th class="border-bottom text-center py-3" style="min-width: 160px;">RAM</th>
+                                                    <th class="border-bottom text-center py-3" style="min-width: 160px;">DISK</th>
+                                                    <th class="border-bottom text-center py-3" style="min-width: 160px;">BANDWIDTH </th>
+                                                    <th class="border-bottom text-center py-3" style="min-width: 180px;">PRICE</th>
+                                                    <th class="border-bottom text-center py-3" style="min-width: 50px;">#</th>
+                                                </tr>
+                                            </thead>
+            
+                                            <tbody>
+                                                <?php if(!empty($get_plans)): ?>
+                                                    <?php foreach($get_plans as $vle): ?>      
+                                                <tr>
+                                                    <td class="h6"><?= ucwords($vle->plan_name) ?></td>
+                                                    <?php $decodeFeatures = json_decode($vle->key_features); ?>
+                                                    <?php foreach($decodeFeatures as $key => $vls): ?>
+                                                    <td class="text-center"><?= $vls ?></td>
+                                                    <?php endforeach; ?>
+                                                    <td class="text-center">Rs.<?= ucwords($vle->plan_price) ?>/<?= ucwords($vle->type) ?></td>
+                                                    <td class="text-center"><a href="<?= site_url('billing-details/'.$vle->id) ?>" class="btn btn-icon btn-soft-warning"><i data-feather="shopping-cart" class="icons"></i></a></td>
+                                                </tr>
+                                                    <?php endforeach; ?>
+                                                <?php endif; ?>
+                                            </tbody>
+                                        </table>
+                                        <div class="text-center border-top py-4">
+                                            <p class="text-muted mb-0">Couldn’t find what you’re looking for ? <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#additional-requirement" class="h6 text-primary">Let us know <i class="mdi mdi-arrow-right"></i></a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--end row-->
+                        </div><!--end teb pane-->
+                    </div><!--end col-->
+                </div>
             </div><!--end row-->
         </div><!--end container-->
     </section><!--end section-->
-    <!-- Price End -->
 
     <!-- Modal Start -->
     <div class="modal fade" id="additional-requirement" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle2" aria-hidden="true">
