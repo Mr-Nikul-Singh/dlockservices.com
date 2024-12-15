@@ -115,8 +115,25 @@
                                             <?php
 
                                                 // Decode JSON into an associative array
-                                                $pricing_tab = '{"1_month":"","3_month":"","6_month":"","12_month":"","24_month":"","36_month":""}';
-                                                $pricing_data = json_decode($plan[0]->pricing_table, true) ?? json_decode($pricing_tab);
+                                                // // $pricing_tab = '{"1_month":"","3_month":"","6_month":"","12_month":"","24_month":"","36_month":""}';
+                                                // $pricing_data = json_decode($plan[0]->pricing_table, true) ?? json_decode($pricing_tab);
+                                                // pre($pricing_data);
+
+                                                $default_pricing_tab = [
+                                                    "1_month" => "",
+                                                    "3_month" => "",
+                                                    "6_month" => "",
+                                                    "12_month" => "",
+                                                    "24_month" => "",
+                                                    "36_month" => ""
+                                                ];
+                                                
+                                                // Decode JSON from the database
+                                                $pricing_data_from_db = json_decode($plan[0]->pricing_table, true) ?? [];
+                                                
+                                                // Merge default structure with the database values
+                                                $pricing_data = array_merge($default_pricing_tab, $pricing_data_from_db);
+                                                // pre($pricing_data);
                                             ?>
 
                                             <!-- Dynamic Billing Cycle Form -->

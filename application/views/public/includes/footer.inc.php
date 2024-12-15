@@ -53,7 +53,7 @@
                     <div class="row mt-5">
                         <div class="col-lg-4 col-md-12">
                             <a class="logo-footer h4 mouse-down text-light" href="#home">
-                                <img src="images/logo-light.png" height="20" alt="">
+                                <img src="<?= base_url('assets/public/images/logo-dark.png') ?>" height="40" alt="">
                             </a>
                             <p class="mt-4 text-foot">
                                 <?= $footerText ?? '' ?>

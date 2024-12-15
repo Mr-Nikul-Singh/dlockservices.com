@@ -155,18 +155,40 @@ class Subscription extends CI_Controller {
 	
 			$encoded_features = json_encode($feature_pairs);
 
-			// Billing cycle Data
-			$items = $this->input->post('billing_cycle1', true);
-			$item_details = $this->input->post('price', true);
+			// Billing Cycle Data
+$items = $this->input->post('billing_cycle1', true);
+$item_details = $this->input->post('price', true);
 
-			$pairs = [];
-			if (is_array($items) && is_array($item_details)) {
-				foreach ($items as $index => $item) {
-					if (isset($item_details[$index])) {
-						$pairs[$item . '_month'] = $item_details[$index];
-					}
-				}
-			}
+// Default structure
+$default_pricing_tab = [
+    "1_month" => "",
+    "3_month" => "",
+    "6_month" => "",
+    "12_month" => "",
+    "24_month" => "",
+    "36_month" => ""
+];
+
+// Initialize pairs array
+$pairs = [];
+
+// Populate pairs with submitted data
+if (is_array($items) && is_array($item_details)) {
+    foreach ($items as $index => $item) {
+        if (isset($item_details[$index])) {
+            // Avoid double '_month'
+            $key = (strpos($item, '_month') === false) ? $item . '_month' : $item;
+            $pairs[$key] = $item_details[$index];
+        }
+    }
+}
+
+// Merge pairs with the default structure to retain missing durations
+$pricing_data_to_save = array_merge($default_pricing_tab, $pairs);
+
+// Convert to JSON for saving
+$pricing_table_json = json_encode($pricing_data_to_save);
+// pre($pricing_table_json);
 	
 			$data = [
 				'type'           => $this->input->post('billing_cycle', true),
@@ -175,7 +197,7 @@ class Subscription extends CI_Controller {
 				'plan_name'      => $this->input->post('plan_name', true),
 				'disk_space'     => $this->input->post('disk_space', true),
 				'key_features'   => $encoded_features,
-				'pricing_table' => json_encode($pairs)
+				'pricing_table' => ($pricing_table_json)
 			];
 	
 			if ($this->root->update_record('tbl_subscriptions', $data, $plan_id)) {

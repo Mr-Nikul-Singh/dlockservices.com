@@ -4,8 +4,16 @@
 
 $billingData = $this->root->get_record('tbl_subscriptions',"id = {$id}");
 // Decode JSON into an associative array
+// Default pricing structure
 $pricing_tab = '{"1_month":"","3_month":"","6_month":"","12_month":"","24_month":"","36_month":""}';
+
+// Decode JSON from the database
 $pricing_data = json_decode($billingData[0]->pricing_table, true) ?? json_decode($pricing_tab);
+
+// Ensure all pricing values are numeric (convert empty or invalid values to 0)
+foreach ($pricing_data as $key => $value) {
+    $pricing_data[$key] = is_numeric($value) ? (float)$value : 0; // Convert to float or default to 0
+}
 
 ?>
 
@@ -16,10 +24,7 @@ $pricing_data = json_decode($billingData[0]->pricing_table, true) ?? json_decode
                
                 <!-- Product Cart Design -->
                 <div class="card rounded shadow p-4 border-0">
-                    <!-- <div class="d-flex justify-content-between align-items-center mb-3">
-                        <span class="h5 mb-0">Your cart</span>
-                        <span class="badge bg-primary rounded-pill"><?= count($pricing_data) ?></span>
-                    </div> -->
+                    <h5>ORDER SUMMERY</h5>
                     <ul class="list-group mb-3 border">
                         <!-- Billing Cycle Section -->
                         <li class="d-flex justify-content-between lh-sm p-3 border-bottom">
@@ -56,12 +61,12 @@ $pricing_data = json_decode($billingData[0]->pricing_table, true) ?? json_decode
                         </li>
                     </ul>
                     
-                    <form>
+                    <!-- <form>
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Promo code">
                             <button type="submit" class="btn btn-secondary">Redeem</button>
                         </div>
-                    </form>
+                    </form> -->
                 </div>
 
             </div><!--end col-->
@@ -159,8 +164,9 @@ $pricing_data = json_decode($billingData[0]->pricing_table, true) ?? json_decode
 
                             <!-- Dynamic Billing Cycle Form -->
                             <div class="form-check mb-3">
-                                <?php foreach ($pricing_data as $duration => $price): ?>
-                                    <input class="form-check-input" 
+                                <?php $count  = 0; foreach ($pricing_data as $duration => $price): ?>
+                                    <?php if ($price > 0): $numbringForSelectedOne = $count++; ?>
+                                    <input class="form-check-input" <?= $numbringForSelectedOne == 0 ? 'checked' : '' ?>
                                         type="radio" 
                                         name="billing_cycle" 
                                         id="billingCycle<?= $duration ?>" 
@@ -172,6 +178,7 @@ $pricing_data = json_decode($billingData[0]->pricing_table, true) ?? json_decode
                                         <?= ucwords(str_replace('_', ' ', $duration)) ?> Price - INR <?= number_format($price, 2) ?>
                                     </label>
                                     <br>
+                                    <?php endif; ?>
                                 <?php endforeach; ?>
                             </div>
 
