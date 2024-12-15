@@ -18,14 +18,10 @@ class Billing extends CI_Controller {
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
         $this->form_validation->set_rules('phone', 'Phone', 'required');
         $this->form_validation->set_rules('address', 'Address', 'required');
-        $this->form_validation->set_rules('city', 'City', 'required');
-        $this->form_validation->set_rules('state', 'State', 'required');
-        $this->form_validation->set_rules('zip', 'Zip Code', 'required');
-        $this->form_validation->set_rules('serverType', 'Server Type', 'required');
-        $this->form_validation->set_rules('cpuCores', 'CPU Cores', 'required');
-        $this->form_validation->set_rules('ramSize', 'RAM Size', 'required');
-        $this->form_validation->set_rules('storage', 'Storage', 'required');
-        $this->form_validation->set_rules('os', 'Operating System', 'required');
+        $this->form_validation->set_rules('city', 'City', '');
+        $this->form_validation->set_rules('state', 'State', '');
+        $this->form_validation->set_rules('zip', 'Zip Code', '');
+
 
         if ($this->form_validation->run() == FALSE) { 
 			$this->form_validation->set_error_delimiters('<div class="text-red">', '</div>');
@@ -39,12 +35,6 @@ class Billing extends CI_Controller {
                 'address'    => $this->input->post('address'),
                 'city'       => $this->input->post('city'),
                 'state'      => $this->input->post('state'),
-                'zip'        => $this->input->post('zip'),
-                'serverType' => $this->input->post('serverType'),
-                'cpuCores'   => $this->input->post('cpuCores'),
-                'ramSize'    => $this->input->post('ramSize'),
-                'storage'    => $this->input->post('storage'),
-                'os'         => $this->input->post('os')
             ];
 
             $this->root->insert_record('tbl_partial_orders',$data);
