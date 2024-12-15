@@ -108,6 +108,46 @@
                                             </div>
                                         </div>
 
+                                        <!-- Billing Cycles -->
+                                        <div class="col-12 col-md-6 col-xl-3 mb-3">
+                                            <label class="form-label">Billing Cycles</label>
+
+                                            <?php
+
+                                                // Decode JSON into an associative array
+                                                $pricing_tab = '{"1_month":"","3_month":"","6_month":"","12_month":"","24_month":"","36_month":""}';
+                                                $pricing_data = json_decode($plan[0]->pricing_table, true) ?? json_decode($pricing_tab);
+                                            ?>
+
+                                            <!-- Dynamic Billing Cycle Form -->
+                                            <?php foreach ($pricing_data as $duration => $price): ?>
+                                                <div class="form-check mb-3">
+                                                    <!-- Billing Cycle Checkbox -->
+                                                    <input class="form-check-input" 
+                                                        type="checkbox" 
+                                                        name="billing_cycle1[]" 
+                                                        id="billingCycle<?= $duration ?>" 
+                                                        data-duration="<?= str_replace('_', ' ', $duration) ?>" 
+                                                        value="<?= $duration ?>" 
+                                                        >
+                                                    <label class="form-check-label" for="billingCycle<?= $duration ?>">
+                                                        <?= ucwords(str_replace('_', ' ', $duration)) ?>
+                                                    </label>
+                                                    
+                                                    <!-- Price Input -->
+                                                    <input type="number" 
+                                                        name="price[]" 
+                                                        id="price<?= $duration ?>" 
+                                                        value="<?= $price ?>" 
+                                                        placeholder="Enter Price" 
+                                                        class="form-control mt-2" 
+                                                         />
+                                                </div>
+                                            <?php endforeach; ?>
+
+
+                                        </div>
+
                                     </div>
 
 

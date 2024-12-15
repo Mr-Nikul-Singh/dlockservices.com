@@ -424,9 +424,9 @@
                                     <li class="slide">
                                         <a href="<?= site_url('subscription/plans') ?>" class="side-menu__item <?= $this->uri->segment(2) == 'plans' ? 'active' : '' ?>">Manage</a>
                                     </li>
-                                    <li class="slide">
+                                    <!-- <li class="slide">
                                         <a href="<?= site_url('subscription/configurations') ?>" class="side-menu__item <?= $this->uri->segment(2) == 'configurations' ? 'active' : '' ?>">Manage Configurations</a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </li>
                             <!-- End::Settings Slide -->

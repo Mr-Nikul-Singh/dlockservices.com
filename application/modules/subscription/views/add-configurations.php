@@ -50,7 +50,7 @@
                                                     <!-- Plan Selection Dropdown -->
                                                     <div class="col-12 col-md-6 col-xl-3 mb-3">
                                                         <label class="form-label">Select A Plan</label>
-                                                        <select name="plans" id="p-holder4" class="js-example-placeholder-single form-control">
+                                                        <select name="plan_id" id="p-holder4" class="js-example-placeholder-single form-control">
                                                             <option value="" disabled selected>Select</option>
                                                             <?php if(!empty($get_plans)): ?>
                                                                 <?php foreach($get_plans as $vli): ?>
@@ -66,64 +66,44 @@
 
                                                         <!-- 1 Month -->
                                                         <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" name="billing_cycle[]" id="billingCycle1" data-duration="1 Month" value="1">
+                                                            <input class="form-check-input" type="checkbox" name="billing_cycle[]" id="billingCycle1" data-duration="1 Month" value="1" required>
                                                             <label class="form-check-label" for="billingCycle1">1 Month</label>
-                                                            <input type="number" name="price_1" id="price1" placeholder="Enter Price" class="form-control mt-2" />
+                                                            <input type="number" name="price[]" id="price1" placeholder="Enter Price" class="form-control mt-2" required />
                                                         </div>
 
                                                         <!-- 3 Months -->
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="checkbox" name="billing_cycle[]" id="billingCycle3" data-duration="3 Months" value="3">
                                                             <label class="form-check-label" for="billingCycle3">3 Months</label>
-                                                            <input type="number" name="price_3" id="price3" placeholder="Enter Price" class="form-control mt-2" />
+                                                            <input type="number" name="price[]" id="price3" placeholder="Enter Price" class="form-control mt-2" />
                                                         </div>
 
                                                         <!-- 6 Months -->
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="checkbox" name="billing_cycle[]" id="billingCycle6" data-duration="6 Months" value="6">
                                                             <label class="form-check-label" for="billingCycle6">6 Months</label>
-                                                            <input type="number" name="price_6" id="price6" placeholder="Enter Price" class="form-control mt-2" />
+                                                            <input type="number" name="price[]" id="price6" placeholder="Enter Price" class="form-control mt-2" />
                                                         </div>
 
                                                         <!-- 12 Months -->
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="checkbox" name="billing_cycle[]" id="billingCycle12" data-duration="12 Months" value="12">
                                                             <label class="form-check-label" for="billingCycle12">12 Months</label>
-                                                            <input type="number" name="price_12" id="price12" placeholder="Enter Price" class="form-control mt-2" />
+                                                            <input type="number" name="price[]" id="price12" placeholder="Enter Price" class="form-control mt-2" />
                                                         </div>
 
                                                         <!-- 24 Months -->
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="checkbox" name="billing_cycle[]" id="billingCycle24" data-duration="24 Months" value="24">
                                                             <label class="form-check-label" for="billingCycle24">24 Months</label>
-                                                            <input type="number" name="price_24" id="price24" placeholder="Enter Price" class="form-control mt-2" />
+                                                            <input type="number" name="price[]" id="price24" placeholder="Enter Price" class="form-control mt-2" />
                                                         </div>
 
                                                         <!-- 36 Months -->
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="checkbox" name="billing_cycle[]" id="billingCycle36" data-duration="36 Months" value="36">
                                                             <label class="form-check-label" for="billingCycle36">36 Months</label>
-                                                            <input type="number" name="price_36" id="price36" placeholder="Enter Price" class="form-control mt-2" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        
-                                            <!-- Dynamic Advanced Features -->
-                                            <div class="col-xl-12 mb-3">
-                                                <label class="form-label">Advanced Features</label>
-                                                <div id="dynamicFeatures">
-                                                    <!-- Placeholder for dynamic features -->
-                                                    <div class="row mb-2">
-                                                        <div class="col-md-3">
-                                                            <input type="text" class="form-control" name="features[]" placeholder="Enter feature name">
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <input type="text" class="form-control" name="feature_details[]" placeholder="Enter feature details">
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                            <button type="button" class="btn btn-outline-primary addFeature">+</button>
+                                                            <input type="number" name="price[]" id="price36" placeholder="Enter Price" class="form-control mt-2" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -159,50 +139,15 @@
 
 <?php require_once(APPPATH.'views/admin/includes/footer.inc.php'); ?>
 
-<!-- JavaScript to handle dynamic fields -->
-<script>
-    // Function to dynamically add and remove fields
-    document.addEventListener('DOMContentLoaded', function () {
-        let featureContainer = document.getElementById('dynamicFeatures');
-        
-        // Add new feature input row
-        document.querySelector('.addFeature').addEventListener('click', function() {
-            let newFeatureRow = document.createElement('div');
-            newFeatureRow.classList.add('row', 'mb-2');
-            
-            newFeatureRow.innerHTML = `
-                <div class="col-md-3">
-                    <input type="text" class="form-control" name="features[]" placeholder="Enter feature name">
-                </div>
-                <div class="col-md-3">
-                    <input type="text" class="form-control" name="feature_details[]" placeholder="Enter feature details">
-                </div>
-                <div class="col-md-2">
-                    <button type="button" class="btn btn-outline-danger removeFeature">-</button>
-                </div>
-            `;
-            
-            featureContainer.appendChild(newFeatureRow);
-            
-            // Add event listener for removing the feature
-            newFeatureRow.querySelector('.removeFeature').addEventListener('click', function() {
-                newFeatureRow.remove();
-            });
-        });
-    });
-</script>
-
 
 <script>
 $(document).ready(function () {
     $('form').on('submit', function (e) {
-        e.preventDefault(); // Prevent the default form submission
+        e.preventDefault();
         
-        // Gather form data, including the dynamic fields
-        var formData = new FormData(this);
-        
+        var formData = new FormData(this);        
         $.ajax({
-            url: '<?= site_url("subscription/add-plan") ?>', // Your form action URL
+            url: '<?= site_url("subscription/add-configurations") ?>', // Your form action URL
             type: 'POST',
             data: formData,
             contentType: false,

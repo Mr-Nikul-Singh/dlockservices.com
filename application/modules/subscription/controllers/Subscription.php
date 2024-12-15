@@ -64,6 +64,18 @@ class Subscription extends CI_Controller {
 
 			$encoded_features = json_encode($feature_pairs);
 
+			// Billing cycle Data
+			$items = $this->input->post('billing_cycle1', true);
+			$item_details = $this->input->post('price', true);
+
+			$pairs = [];
+			if (is_array($items) && is_array($item_details)) {
+				foreach ($items as $index => $item) {
+					if (isset($item_details[$index])) {
+						$pairs[$item . '_month'] = $item_details[$index];
+					}
+				}
+			}
 
 			$data = [
 				'type'           => $this->input->post('billing_cycle', true),
@@ -73,8 +85,10 @@ class Subscription extends CI_Controller {
 				'disk_space'     => $this->input->post('disk_space', true),
 				// 'bandwidth'      => $this->input->post('bandwidth', true),
 				// 'email_accounts' => $this->input->post('email_accounts', true),
-				'key_features'   => $encoded_features
+				'key_features'   => $encoded_features,
+				'pricing_table' => json_encode($pairs)
 			];
+			// pre($data);
 
 			if ($this->root->insert_record('tbl_subscriptions', $data)) {
 				echo json_encode([
@@ -140,6 +154,19 @@ class Subscription extends CI_Controller {
 			}
 	
 			$encoded_features = json_encode($feature_pairs);
+
+			// Billing cycle Data
+			$items = $this->input->post('billing_cycle1', true);
+			$item_details = $this->input->post('price', true);
+
+			$pairs = [];
+			if (is_array($items) && is_array($item_details)) {
+				foreach ($items as $index => $item) {
+					if (isset($item_details[$index])) {
+						$pairs[$item . '_month'] = $item_details[$index];
+					}
+				}
+			}
 	
 			$data = [
 				'type'           => $this->input->post('billing_cycle', true),
@@ -147,9 +174,8 @@ class Subscription extends CI_Controller {
 				'hosting_type'   => $this->input->post('hosting_type', true),
 				'plan_name'      => $this->input->post('plan_name', true),
 				'disk_space'     => $this->input->post('disk_space', true),
-				// 'bandwidth'      => $this->input->post('bandwidth', true),
-				// 'email_accounts' => $this->input->post('email_accounts', true),
-				'key_features'   => $encoded_features
+				'key_features'   => $encoded_features,
+				'pricing_table' => json_encode($pairs)
 			];
 	
 			if ($this->root->update_record('tbl_subscriptions', $data, $plan_id)) {
@@ -168,6 +194,51 @@ class Subscription extends CI_Controller {
 		}
 	
 		$this->load->view('subscription/edit-plan', ['plan' => $plan]);
+	}
+
+	/**
+	 * @void return
+	 */
+	public function add_configurations(){
+	
+		if(!empty($_POST)):
+			$plan_id = $this->input->post('plan_id');
+			if(empty($plan_id)):
+				echo json_encode([
+					'status' => 'error',
+					'message' => "Please select a plan."
+				]);
+				return;
+			else:
+
+			$items = $this->input->post('billing_cycle', true);
+			$item_details = $this->input->post('price', true);
+
+			$pairs = [];
+			if (is_array($items) && is_array($item_details)) {
+				foreach ($items as $index => $item) {
+					if (isset($item_details[$index])) {
+						$pairs[$item . '_month'] = $item_details[$index];
+					}
+				}
+			}
+
+
+
+				$data = [
+						'plan_id' => $plan_id,
+						'pricing_table' => json_encode($pairs)
+				];
+				$this->root->insert_record('tbl_plan_configuratins',$data);
+				echo json_encode([
+					'status' => 'success',
+					'message' => 'Plan updated successfully!',
+					'data' => $data
+				]);
+				return;
+			endif;
+		endif;	
+
 	}
 
 	public function delete_plan(){
@@ -351,8 +422,5 @@ class Subscription extends CI_Controller {
 		$this->title = 'Configurations';
 		$data['get_plans'] = $this->root->get_record('tbl_subscriptions');
 		$this->load->view('subscription/add-configurations',$data);
-	}
-
-	public function add_configurations(){
 	}
 }

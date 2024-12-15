@@ -103,6 +103,53 @@
                                             </div>
                                         </div>
 
+                                        <!-- Billing Cycles -->
+                                        <div class="col-12 col-md-6 col-xl-3 mb-3">
+                                            <label class="form-label">Billing Cycles</label>
+
+                                            <!-- 1 Month -->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="billing_cycle1[]" id="billingCycle1" data-duration="1 Month" value="1" required>
+                                                <label class="form-check-label" for="billingCycle1">1 Month</label>
+                                                <input type="number" name="price[]" id="price1" placeholder="Enter Price" class="form-control mt-2" required />
+                                            </div>
+
+                                            <!-- 3 Months -->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="billing_cycle1[]" id="billingCycle3" data-duration="3 Months" value="3">
+                                                <label class="form-check-label" for="billingCycle3">3 Months</label>
+                                                <input type="number" name="price[]" id="price3" placeholder="Enter Price" class="form-control mt-2" />
+                                            </div>
+
+                                            <!-- 6 Months -->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="billing_cycle1[]" id="billingCycle6" data-duration="6 Months" value="6">
+                                                <label class="form-check-label" for="billingCycle6">6 Months</label>
+                                                <input type="number" name="price[]" id="price6" placeholder="Enter Price" class="form-control mt-2" />
+                                            </div>
+
+                                            <!-- 12 Months -->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="billing_cycle1[]" id="billingCycle12" data-duration="12 Months" value="12">
+                                                <label class="form-check-label" for="billingCycle12">12 Months</label>
+                                                <input type="number" name="price[]" id="price12" placeholder="Enter Price" class="form-control mt-2" />
+                                            </div>
+
+                                            <!-- 24 Months -->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="billing_cycle1[]" id="billingCycle24" data-duration="24 Months" value="24">
+                                                <label class="form-check-label" for="billingCycle24">24 Months</label>
+                                                <input type="number" name="price[]" id="price24" placeholder="Enter Price" class="form-control mt-2" />
+                                            </div>
+
+                                            <!-- 36 Months -->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="billing_cycle1[]" id="billingCycle36" data-duration="36 Months" value="36">
+                                                <label class="form-check-label" for="billingCycle36">36 Months</label>
+                                                <input type="number" name="price[]" id="price36" placeholder="Enter Price" class="form-control mt-2" />
+                                            </div>
+                                        </div>
+
                                     </div>
 
                                         <div class="col-12"> 

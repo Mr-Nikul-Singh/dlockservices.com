@@ -141,7 +141,7 @@
                                                     <th class="border-bottom text-center py-3" style="min-width: 160px;">DISK</th>
                                                     <th class="border-bottom text-center py-3" style="min-width: 160px;">BANDWIDTH </th>
                                                     <th class="border-bottom text-center py-3" style="min-width: 180px;">PRICE</th>
-                                                    <th class="border-bottom text-center py-3" style="min-width: 50px;">#</th>
+                                                    <th class="border-bottom text-center py-3" style="min-width: 50px;">BUY NOW</th>
                                                 </tr>
                                             </thead>
             
