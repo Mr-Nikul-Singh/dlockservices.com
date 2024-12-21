@@ -209,7 +209,7 @@ foreach ($pricing_data as $key => $value) {
 
 
                                 <div class="row">
-                                    <div class="col-4">
+                                    <div class="col-md-12 col-xl-6">
                                         <div class="form-group mt-2">
                                             <label for="form-label">Operating System</label>
                                             <select name="" id="" class="form-control">
@@ -223,7 +223,7 @@ foreach ($pricing_data as $key => $value) {
                                         </div>
                                     </div>
 
-                                    <div class="col-4">
+                                    <div class="col-md-12 col-xl-6">
                                         <div class="form-group mt-2">
                                             <label for="form-label">Database Software</label>
                                             <select name="" id="" class="form-control">
@@ -237,7 +237,7 @@ foreach ($pricing_data as $key => $value) {
                                         </div>
                                     </div>
 
-                                    <div class="col-4">
+                                    <div class="col-md-12 col-xl-6">
                                         <div class="form-group mt-2">
                                             <label for="form-label">Control Panel</label>
                                             <select name="" id="" class="form-control">
