@@ -1,4 +1,24 @@
 <?php
+// echo phpversion();die;
+// Database configuration
+// $hostname = 'localhost';
+// $username = 'root';
+// $password = 'Nikul84678467';
+// $database = 'dlockservices';
+
+// // Create a connection
+// $conn = new mysqli($hostname, $username, $password, $database);
+
+// // Check the connection
+// if ($conn->connect_error) {
+//     die("Connection failed: " . $conn->connect_error);
+// } else {
+//     echo "Connected successfully to the database: $database";
+// }
+
+// // Close the connection
+// $conn->close();die;
+
 /**
  * CodeIgniter
  *
