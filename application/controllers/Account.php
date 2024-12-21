@@ -57,6 +57,7 @@ class Account extends CI_Controller {
 		
             $data  = array(
                 'first_name' => $fname,
+                'full_name'  => $fname.' '.$lname,
                 'last_name'  => $lname,
                 'contact'    => $phone,
                 'email'      => $email,
