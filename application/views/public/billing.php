@@ -236,7 +236,7 @@ foreach ($pricing_data as $key => $value) {
                                     <select name="" id="" class="form-control">
                                         <option value="">Select</option>
                                         <?php 
-                                        foreach($available_os as $key => $cp):
+                                        foreach($cpanels_list as $key => $cp):
                                             echo  "<option value='$cp'>$cp</option>";
                                         endforeach;
                                         ?>
