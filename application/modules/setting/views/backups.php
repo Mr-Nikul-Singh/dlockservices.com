@@ -81,35 +81,37 @@ foreach ($backupFiles as $file) {
 
 ?>
 
-<!-- HTML to display the backups -->
-<div class="row">
-    <div class="col-12">
-        <h3>Database Backup Files</h3>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Backup Date</th>
-                    <th>File Name</th>
-                    <th>Download</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                // Loop through the backups and display each one in the table
-                foreach ($backups as $index => $backup) {
-                    echo "<tr>";
-                    echo "<td>" . ($index + 1) . "</td>";
-                    echo "<td>" . $backup['backupDate'] . "</td>";
-                    echo "<td>" . $backup['file'] . "</td>";
-                    echo "<td><a href='" . $backupDir . $backup['file'] . "' class='btn btn-primary' download>Download</a></td>";
-                    echo "</tr>";
-                }
-                ?>
-            </tbody>
-        </table>
-    </div>
-</div>
+                    <!-- HTML to display the backups -->
+                    <div class="row">
+                        <div class="col-12">
+                            <h3>Database Backup Files</h3>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Backup Date</th>
+                                        <th>File Name</th>
+                                        <th>Download</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    // Loop through the backups and display each one in the table
+                                    foreach ($backups as $index => $backup) {
+                                        echo "<tr>";
+                                        echo "<td>" . ($index + 1) . "</td>";
+                                        echo "<td>" . $backup['backupDate'] . "</td>";
+                                        echo "<td>" . $backup['file'] . "</td>";
+                                        echo "<td><a href='" . $backupDir . $backup['file'] . "' class='btn btn-primary' download>Download</a></td>";
+                                        echo "<td><button class='btn btn-danger delete-btn' data-file='" . $backup['file'] . "'><i class='ti ti-trash'></i></button></td>";
+                                        echo "</tr>";
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
                 </div>
 
@@ -124,3 +126,29 @@ foreach ($backupFiles as $file) {
 
 
 <?php require_once(APPPATH.'views/admin/includes/footer.inc.php'); ?>
+
+
+    <!-- AJAX Script for Deleting Backup -->
+    <script>
+        $(document).ready(function() {
+            $('.delete-btn').click(function() {
+                var fileName = $(this).data('file');
+                if (confirm("Are you sure you want to delete the backup file: " + fileName + "?")) {
+                    // Send the request to the backend for deletion
+                    $.ajax({
+                        url: '<?= site_url('setting/delete-bakcup') ?>',
+                        type: 'POST',
+                        data: { file: fileName },
+                        success: function(response) {
+                            if (response === 'success') {
+                                alert('Backup file deleted successfully.');
+                                location.reload(); // Reload the page to update the list
+                            } else {
+                                alert('Error deleting the backup file.');
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    </script>

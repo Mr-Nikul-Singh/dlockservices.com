@@ -24,4 +24,28 @@ class Backup extends CI_Controller {
         $this->load->view('setting/download-backup');
     }
 
+    public function delete_bakcup(){
+        if (isset($_POST['file'])) {
+            $fileName = $_POST['file'];
+            $backupDir = 'assets/0000/23939/208203/';
+        
+            // Get the full file path
+            $filePath = $backupDir . $fileName;
+        
+            // Check if the file exists
+            if (file_exists($filePath)) {
+                // Attempt to delete the file
+                if (unlink($filePath)) {
+                    echo 'success'; // Respond with success if the file is deleted
+                } else {
+                    echo 'error'; // Respond with error if deletion fails
+                }
+            } else {
+                echo 'error'; // Respond with error if the file doesn't exist
+            }
+        } else {
+            echo 'error'; // Respond with error if no file parameter is received
+        }
+    }
+
 }
