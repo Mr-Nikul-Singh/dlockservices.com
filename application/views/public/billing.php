@@ -17,7 +17,7 @@ foreach ($pricing_data as $key => $value) {
 
 ?>
 
-<section class="section">
+<section class="section mt-2">
     <div class="container">
         <div class="row">
             
