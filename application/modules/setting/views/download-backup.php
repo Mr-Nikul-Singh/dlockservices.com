@@ -101,6 +101,7 @@ function backup_tables($host, $user, $pass, $dbname, $tables = '*') {
     fwrite($handle, $return);
     if (fclose($handle)) {
         echo "Done, the file name is: " . $fileName;
+        header('Location: /setting/backup'); // Use URL encoding for file names
         exit;
     } else {
         echo "Error writing to file.";
