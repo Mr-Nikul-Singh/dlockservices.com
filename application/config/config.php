@@ -23,22 +23,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://dlockservices.local:8082/';
+// $config['base_url'] = 'http://dlockservices.local:8082/';
 
-// $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
-// $host = $_SERVER['HTTP_HOST'];
-// $base_url = $protocol . '://' . $host;
+$protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
+$host = $_SERVER['HTTP_HOST'];
+$base_url = $protocol . '://' . $host;
 
-// // Check if localhost
-// if ($host === 'localhost' || substr($host, 0, 9) === '127.0.0.1' || $host === '192.168.43.149') {
-//     // Adjust the path as per your project directory structure
-//     $base_url .= '/server.1.0.2';
-// } else {
-//     // If not localhost, use your live server URL
-//     $base_url .= ''; // Change this to your live server URL
-// }
+// Check if localhost
+if ($host === 'dlockservices.local:8082' || substr($host, 0, 9) === '127.0.0.1') {
+    // Adjust the path as per your project directory structure
+    $base_url .= '';
+} else {
+    // If not localhost, use your live server URL
+    $base_url .= ''; // Change this to your live server URL
+}
 
-// $config['base_url'] = $base_url;
+$config['base_url'] = $base_url;
 
 // date_default_timezone_set("Asia/Calcutta");   //India time (GMT+5:30)
 
