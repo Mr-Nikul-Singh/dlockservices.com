@@ -549,7 +549,7 @@
                     <h4>Payments Questions</h4>
                 </div>
 
-                <div class="accordion mt-4 pt-2" id="accordionExampletwo">
+                <!-- <div class="accordion mt-4 pt-2" id="accordionExampletwo">
                     <div class="accordion-item rounded shadow bg-white">
                         <h2 class="accordion-header" id="headingfiveo">
                             <button class="accordion-button border-0 bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefiveo"
@@ -620,7 +620,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
             </div><!--end container-->
         </section><!--end section-->
