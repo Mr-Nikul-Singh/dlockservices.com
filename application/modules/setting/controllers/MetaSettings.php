@@ -75,7 +75,7 @@ class MetaSettings extends CI_Controller {
                     echo $this->upload->display_errors();
                 }
             }
-
+ 
 
             $this->setting->update_settings($data);
             $tempdata = array('icon' => 'check', 'success' => 'Meta settings updated successfully.');

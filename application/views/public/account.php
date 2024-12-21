@@ -312,5 +312,26 @@
     });
 }
 
+$(document).ready(function () {
+    // Check if the URL has a hash
+    if (window.location.hash) {
+        var hash = window.location.hash; // Get the hash from the URL
+        var tabLink = $('a[href="' + hash + '"]'); // Find the corresponding tab link
+        var tabContent = $(hash); // Find the corresponding tab content
+
+        // Check if both the tab link and content exist
+        if (tabLink.length && tabContent.length) {
+            // Deactivate all tabs and tab contents
+            $('.nav-pills .nav-link').removeClass('active');
+            $('.tab-content .tab-pane').removeClass('active show');
+
+            // Activate the selected tab and its content
+            tabLink.addClass('active');
+            tabContent.addClass('active show');
+        }
+    }
+});
+
+
 
 </script>

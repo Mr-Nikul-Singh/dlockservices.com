@@ -12,13 +12,13 @@
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
         </div>
         <div class="carousel-inner">
-            <div class="carousel-item active" style="background-image: url('<?= base_url('assets/public/banner/dlock_banner_16.jpg') ?>'); background-size: contain; background-position: center;">
+            <div class="carousel-item active" style="background-image: url('<?= base_url('assets/public/banner/dlock_banner_16.jpg') ?>'); background-repeat: no-repeat;background-size: contain; background-position: center;">
             </div>
-            <div class="carousel-item" style="background-image: url('<?= base_url('assets/public/banner/dlock_banner_2.jpg') ?>'); background-size: contain; background-position: center;">
+            <div class="carousel-item" style="background-image: url('<?= base_url('assets/public/banner/dlock_banner_2.jpg') ?>'); background-repeat: no-repeat;background-size: contain; background-position: center;">
             </div>
-            <div class="carousel-item" style="background-image: url('<?= base_url('assets/public/banner/dlock_banner_3.jpg') ?>'); background-size: contain; background-position: center;">
+            <div class="carousel-item" style="background-image: url('<?= base_url('assets/public/banner/dlock_banner_3.jpg') ?>');background-repeat: no-repeat; background-size: contain; background-position: center;">
             </div>
-            <div class="carousel-item" style="background-image: url('<?= base_url('assets/public/banner/dlock_banner_4.jpg') ?>'); background-size: contain; background-position: center;">
+            <div class="carousel-item" style="background-image: url('<?= base_url('assets/public/banner/dlock_banner_4.jpg') ?>');background-repeat: no-repeat; background-size: contain; background-position: center;">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

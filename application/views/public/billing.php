@@ -25,11 +25,11 @@ foreach ($pricing_data as $key => $value) {
             <div class="col-md-7 col-lg-8">
                 <div class="card rounded shadow p-4 border-0">
                     <h4 class="mb-3">Choose Billing Cycle</h4>
-                    <form action="<?= site_url('billing-details/'.$id) ?>" method="post">
+                    <form action="<?= site_url('billing-details/'.$id) ?>" id="submit_Data" method="post">
                         <!-- Billing Details Form -->
-                        <?php if ($this->session->flashdata('success_message')): ?>
+                        <?php if ($this->session->tempdata('success_info')): ?>
                             <div class="alert alert-success">
-                                <?= $this->session->flashdata('success_message'); ?>
+                                <?= $this->session->tempdata('success_info'); ?>
                             </div>
                         <?php endif; ?>
                         <div class="custom-form">
@@ -153,7 +153,7 @@ foreach ($pricing_data as $key => $value) {
                                     <div class="col-md-12 col-xl-6">
                                         <div class="form-group mt-2">
                                             <label for="form-label">Operating System</label>
-                                            <select name="" id="" class="form-control">
+                                            <select name="" id="" class="form-control" required>
                                                 <option value="">Select</option>
                                                 <?php 
                                                 foreach($available_os as $key => $os):
@@ -167,7 +167,7 @@ foreach ($pricing_data as $key => $value) {
                                     <div class="col-md-12 col-xl-6">
                                         <div class="form-group mt-2">
                                             <label for="form-label">Database Software</label>
-                                            <select name="" id="" class="form-control">
+                                            <select name="" id="" class="form-control" required>
                                                 <option value="">Select</option>
                                                 <?php 
                                                 foreach($db_softwares as $key => $db):
@@ -181,7 +181,7 @@ foreach ($pricing_data as $key => $value) {
                                     <div class="col-md-12 col-xl-6">
                                         <div class="form-group mt-2">
                                             <label for="form-label">Control Panel</label>
-                                            <select name="" id="" class="form-control">
+                                            <select name="" id="" class="form-control" required>
                                                 <option value="">Select</option>
                                                 <?php 
                                                 foreach($cpanels_list as $key => $cp):
@@ -254,7 +254,7 @@ foreach ($pricing_data as $key => $value) {
                     <form>
                         <div class="form-group">
                             <!-- <input type="text" class="form-control" placeholder="Promo code"> -->
-                            <button type="submit" class="btn btn-primary form-control">Pay Now</button>
+                            <button type="submit" form="submit_Data"  class="btn btn-primary form-control">Pay Now</button>
                         </div>
                     </form>
                 </div>
@@ -340,3 +340,14 @@ function ucwords(str) {
 // Initialize the default selected cycle when the page loads
 window.onload = updatePrice;
 </script>
+
+
+<?php if ($this->session->tempdata('success_info')): ?>
+    <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+                window.location.href = "<?= site_url('my-account/#orders') ?>";
+            }, 3000); // 3000 milliseconds = 3 seconds
+        });
+    </script>
+<?php endif; ?>

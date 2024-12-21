@@ -38,7 +38,8 @@ class Billing extends CI_Controller {
             ];
 
             $this->root->insert_record('tbl_partial_orders',$data);
-            $this->session->set_flashdata('success_message', 'Congrats, Ordered successfully!');
+            $tempdata = array('icon' => 'check', 'success_info' => 'Congrats, Ordered successfully!');
+            $this->session->set_tempdata($tempdata, NULL, 3);
             redirect('billing-details/'.$id);
         }
         $data['get_plans'] = $this->root->get_record('tbl_subscriptions',"hosting_type = 'vps'",'*','asc|id');
