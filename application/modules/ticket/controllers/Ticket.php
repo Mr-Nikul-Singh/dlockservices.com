@@ -4,55 +4,72 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Ticket extends CI_Controller {
 
-
 	public function __construct()
 	{
 		parent::__construct();
 		if(!isset($this->session->user_id)):
 			redirect('auth/login');
 		endif;
+        $this->load->model('Ticket_Model','ticket');
+
 	}
     
-    public function login_history(){
-        $this->title = "Login History";
+    public function index(){
+        $this->title = "Tickets";
         get_limit_message();
-		$config['base_url']    = site_url("history/login-history");
-		$config['total_rows']  = $this->history->get_history_count();
+		$config['base_url']    = site_url("ticket/tickets");
+		$config['total_rows']  = $this->ticket->get_tickets_count();
 		$config['per_page']    = (isset($_SESSION['limit']) ? $_SESSION['limit'] : '10');
 		$config["uri_segment"] = 3;
         $config['reuse_query_string'] = true;
 		$this->pagination->initialize($config);
 		$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 		$data["links"]          = $this->pagination->create_links();
-		$data['get_history'] = $this->history->get_history($config['per_page'],$page);
-        $this->load->view('history/login_history',$data);
+		$data['get_tickets'] = $this->ticket->get_tickets($config['per_page'],$page);
+        $this->load->view('ticket/tickets',$data);
     }
 
-    public function view_history_details($id){
-        $this->title = 'Login history details';
-        $data['get_login_history_details'] = $this->root->get_record('tbl_login_history',"id = '$id'");
-        $this->load->view('history/view_history',$data);
+    public function add(){
+        $this->title = 'Create Ticket';
+        $this->form_validation->set_rules('subject', 'subject', 'required');
+        $this->form_validation->set_rules('category', 'category', 'required');
+        $this->form_validation->set_rules('priority', 'priority', 'required');
+        $this->form_validation->set_rules('status', 'status', 'required');
+        $this->form_validation->set_rules('description', 'description', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
+        }else{
+
+            $data = array(
+                'created_by'  => $this->session->user_id,
+                'ticket_id'   => generateInvoiceID(),
+                'category'    => $this->input->post('category'),
+                'priority'    => $this->input->post('priority'),
+                'subject'     => $this->input->post('subject'),
+                'status'      => $this->input->post('status'),
+                'description' => $this->input->post('description'),
+            );
+            
+            $tempdata = array('icon' => 'check', 'success' => 'Ticket created successfully.');
+            if($this->root->insert_record('tbl_tickets',$data,$id) == true):
+                $this->session->set_tempdata($tempdata, NULL, 3);
+                redirect('ticket/tickets');
+            endif;
+            
+        }
+        $this->load->view('ticket/add-ticket');
     }
 
-    public function export_history(){
-		$columns = $this->root->describe('tbl_login_history');
-	
-        $data = $this->root->get_record('tbl_login_history',null,null,null,'array');
-
-		$data = array(
-			'download' => true,
-			'columns'  => $columns,
-			'rows'     => $data,
-			'filename' => date('d-m-y').'-login-history-'.uniqid(),
-		);
-
-		$this->excel->download($data);
+    public function edit(){
+        $this->title = 'Edit Ticket';
+        $this->load->view('ticket/edit-ticket');
     }
 
-    public function delete_login_history(){
-        if($this->history->delete_record($this->input->post('id'))):
+    public function delete(){
+        if($this->ticket->delete_record($this->input->post('id'))):
             $response = array(
-                'message' => 'Login history deleted successfully.',
+                'message' => 'Ticket deleted successfully.',
                 'icon'    => 'success',
                 'status'  => '200'
             );
@@ -63,7 +80,7 @@ class Ticket extends CI_Controller {
                 'status'  => '404'
             );
         endif;
-
         echo json_encode($response);
     }
+
 }

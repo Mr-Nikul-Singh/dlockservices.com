@@ -378,7 +378,7 @@
 
                             <!-- Start::Settings Slide -->
                             <?php
-                                $settingsHookKey = array('tickets ','add-ticket','edit-ticket','view-ticket');
+                                $settingsHookKey = array('tickets','add-ticket','edit-ticket','view-ticket');
                                 $settingsActiveHook = in_array($this->uri->segment(2), $settingsHookKey) ? 'active open' : '';
                             ?>
                             <li class="slide has-sub <?= $settingsActiveHook ?>">
@@ -390,7 +390,7 @@
                                 <ul class="slide-menu child1">
                                     <li class="slide side-menu__label1"><a href="javascript:void(0)">Tickets</a></li>
                                     <li class="slide">
-                                        <a href="<?= site_url('ticket/create-review') ?>" class="side-menu__item <?= $this->uri->segment(2) == 'add-ticket' ? 'active' : '' ?>">Create Ticket</a>
+                                        <a href="<?= site_url('ticket/add-ticket') ?>" class="side-menu__item <?= $this->uri->segment(2) == 'add-ticket' ? 'active' : '' ?>">Create Ticket</a>
                                     </li>
                                     <li class="slide">
                                         <a href="<?= site_url('ticket/tickets') ?>" class="side-menu__item <?= $this->uri->segment(2) == 'tickets' ? 'active' : '' ?>">Manage</a>

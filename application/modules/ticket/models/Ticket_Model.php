@@ -9,14 +9,13 @@ class Ticket_Model extends CI_Model{
 	 * @param mixed $where
 	 * @return mixed
 	 */
-    public function get_history($limit,$start){
-		 
+    public function get_tickets($limit,$start){
+		  
 		$filter = search_input_security(security($this->input->get('filter')));
-
 		$user_id = $this->session->user_id;
 
 		$this->db->select('*');
-		$this->db->from('tbl_login_history');
+		$this->db->from('tbl_tickets');
 		$this->db->group_start();
 		$this->db->where_in('created_by', get_ids($user_id), false);
 		$this->db->group_end();
@@ -24,11 +23,11 @@ class Ticket_Model extends CI_Model{
 
 		if (!empty($filter)) {
 			$this->db->group_start(); // Start grouping the search conditions
-			$this->db->like('error_type', $filter);
-			$this->db->or_like('user_type', $filter);
-			$this->db->or_like('email', $filter);
+			$this->db->like('ticket_id', $filter);
+			$this->db->like('subject', $filter);
 			$this->db->or_like('status', $filter);
-			$this->db->or_like('device_info', $filter);
+			$this->db->or_like('priority', $filter);
+			$this->db->or_like('category', $filter);
 			$this->db->group_end(); // End grouping the search conditions
 		}
 
@@ -38,14 +37,13 @@ class Ticket_Model extends CI_Model{
 
     }
 
-	public function get_history_count(){
+	public function get_tickets_count(){
 		
-		$filter = search_input_security(security($this->input->get('filter')));
-		
+		$filter = search_input_security(security($this->input->get('filter')));		
 		$user_id = $this->session->user_id;
 
 		$this->db->select('*');
-        $this->db->from('tbl_login_history');
+        $this->db->from('tbl_tickets');
 
 		$this->db->group_start();
 		$this->db->where_in('created_by', get_ids($user_id), false);
@@ -53,11 +51,11 @@ class Ticket_Model extends CI_Model{
 
 		if(!empty($filter)):
 			$this->db->group_start(); // Start grouping the search conditions
-			$this->db->like('error_type', $filter);
-			$this->db->or_like('user_type', $filter);
-			$this->db->or_like('email', $filter);
+			$this->db->like('ticket_id', $filter);
+			$this->db->like('subject', $filter);
 			$this->db->or_like('status', $filter);
-			$this->db->or_like('device_info', $filter);
+			$this->db->or_like('priority', $filter);
+			$this->db->or_like('category', $filter);
 			$this->db->group_end(); // End grouping the search conditions
 		endif;
 		return $this->db->count_all_results();
@@ -70,7 +68,7 @@ class Ticket_Model extends CI_Model{
 		$this->db->group_end();
 
 		$this->db->where('id',$id);
-		$this->db->delete('tbl_login_history');
+		$this->db->delete('tbl_tickets');
 
 		if($this->db->affected_rows() == 1): 
 			return true;

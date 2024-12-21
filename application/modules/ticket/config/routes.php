@@ -1,10 +1,8 @@
 <?php
 
-
-// History Routes
-$route['history/login-history']        = 'History/login_history';
-$route['history/login-history/(:num)'] = 'History/login_history/$1';
-$route['history/export-history']       = 'History/export_history';
-$route['history/delete-login-history'] = 'History/delete_login_history';
-$route['history/view-history/(:num)'] = 'History/view_history_details/$1';
-
+// Ticket Routes
+$route['ticket/tickets']            = 'Ticket/index';
+$route['ticket/tickets/(:num)']     = 'Ticket/index/$1';
+$route['ticket/add-ticket']         = 'Ticket/add';
+$route['ticket/edit-ticket/(:num)'] = 'Ticket/edit/$1';
+$route['ticket/delete-ticket']      = 'Ticket/delete';

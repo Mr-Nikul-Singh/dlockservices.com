@@ -57,9 +57,9 @@ function set_limit(val){
 
 function site_url(url = ''){
 
-	<?php if ($_SERVER['HTTP_HOST'] === 'localhost') { ?>
+	<?php if ($_SERVER['HTTP_HOST'] === 'dlockservices.local:8082') { ?>
 
-		return location.protocol + "//" + location.host + '/server.1.0.2/' + url;
+		return location.protocol + "//" + location.host + '/' + url;
 
 	<?php } else { ?>
 
