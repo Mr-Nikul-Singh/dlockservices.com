@@ -292,7 +292,7 @@
                          
                             <li class="slide has-sub <?= $ActiveHook ?>">
                                 <a href="javascript:void(0);" class="side-menu__item <?= $ActiveHook ?>">
-                                    <span class="side-menu__icon"><i class='ti ti-database'></i></span>
+                                    <span class="side-menu__icon"><i class='ti ti-list'></i></span>
                                     <span class="side-menu__label">Orders</span>
                                     <i class="fe fe-chevron-right side-menu__angle"></i>
                                 </a>
@@ -505,6 +505,17 @@
                                         <i class='bx bx-history'></i>
                                     </span> 
                                     <span class="side-menu__label <?= $this->uri->segment(2) == 'login-history' ? 'active' : '' ?>">Login History</span>
+                                </a>
+                            </li>
+                            <!-- End::slide -->
+
+                            <!-- Start::slide -->
+                            <li class="slide">
+                                <a href="<?= site_url('setting/backup') ?>" class="side-menu__item">
+                                    <span class="side-menu__icon">
+                                        <i class='bx bx-coin-stack'></i>
+                                    </span> 
+                                    <span class="side-menu__label">Backup</span>
                                 </a>
                             </li>
                             <!-- End::slide -->
