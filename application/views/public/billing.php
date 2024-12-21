@@ -20,64 +20,7 @@ foreach ($pricing_data as $key => $value) {
 <section class="section">
     <div class="container">
         <div class="row">
-            <div class="col-md-5 col-lg-4 order-md-last">
-               
-                <!-- Product Cart Design -->
-                <div class="card rounded shadow p-4 border-0">
-                    <h5>ORDER SUMMERY</h5>
-                    <ul class="list-group mb-3 border">
-                        <!-- Billing Cycle Section -->
-                        <li class="d-flex justify-content-between lh-sm p-3 border-bottom">
-                            <div>
-                                <h6 class="my-0">Plan</h6>
-                                <!-- <small class="text-muted" id="selectedCycle">None selected</small> -->
-                            </div>
-                            <!-- <span id="selectedPrice" class="text-muted">INR 0.00</span> -->
-                            <span id="selectedCycle" class="text-muted">None selected</span>
-                        </li>
-
-                        <li class="d-flex justify-content-between lh-sm p-3 border-bottom">
-                            <div>
-                                <h6 class="my-0">Price per month</h6>
-                            </div>
-                            <span id="selectedPrice" class="text-muted">INR 0.00</span>
-                        </li>
-                        
-                        <!-- GST Section -->
-                        <li class="d-flex justify-content-between lh-sm p-3 border-bottom">
-                            <div>
-                                <h6 class="my-0">GST @ 18%</h6>
-                                <small class="text-muted">Tax</small>
-                            </div>
-                            <span class="text-muted" id="gstAmount">INR 0.00</span> <!-- Display GST dynamically -->
-                        </li>
-
-                        <!-- Setup fee Section -->
-                        <li class="d-flex justify-content-between bg-light p-3 border-bottom">
-                            <div class="text-warning">
-                                <h6 class="my-0">Setup Fees</h6>
-                            </div>
-                            <span class="text-warning">INR 0.00</span> <!-- Display total dynamically -->
-                        </li>
-
-                        <!-- Total Section -->
-                        <li class="d-flex justify-content-between bg-light p-3 border-bottom">
-                            <div class="text-success">
-                                <h6 class="my-0">Total Due Today</h6>
-                            </div>
-                            <span class="text-success" id="totalAmount">INR 0.00</span> <!-- Display total dynamically -->
-                        </li>
-                    </ul>
-                    
-                    <!-- <form>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Promo code">
-                            <button type="submit" class="btn btn-secondary">Redeem</button>
-                        </div>
-                    </form> -->
-                </div>
-
-            </div><!--end col-->
+            
             
             <div class="col-md-7 col-lg-8">
                 <div class="card rounded shadow p-4 border-0">
@@ -94,7 +37,7 @@ foreach ($pricing_data as $key => $value) {
                             <div class="row">
                                 <!-- Full Name -->
                                 <div class="col-md-6">
-                                    <div class="mb-3">
+                                    <div class="mb-0">
                                         <!-- <label class="form-label">Full Name <span class="text-danger">*</span></label> -->
                                         <div class="form-icon position-relative">
                                             <input name="fullName" id="fullName" type="hidden" class="form-control" placeholder="Full Name :" value="<?= set_value('fullName',$get_user_details[0]->full_name); ?>">
@@ -105,7 +48,7 @@ foreach ($pricing_data as $key => $value) {
 
                                 <!-- Email -->
                                 <div class="col-md-6">
-                                    <div class="mb-3">
+                                    <div class="mb-0">
                                         <!-- <label class="form-label">Email Address <span class="text-danger">*</span></label> -->
                                         <div class="form-icon position-relative">
                                             <input name="email" id="email" type="hidden" class="form-control" placeholder="Email :" value="<?= set_value('email',$get_user_details[0]->email); ?>">
@@ -116,7 +59,7 @@ foreach ($pricing_data as $key => $value) {
 
                                 <!-- Phone -->
                                 <div class="col-md-6">
-                                    <div class="mb-3">
+                                    <div class="mb-0">
                                         <!-- <label class="form-label">Phone Number <span class="text-danger">*</span></label> -->
                                         <div class="form-icon position-relative">
                                             <input name="phone" id="phone" type="hidden" class="form-control" placeholder="Phone :" value="<?= set_value('phone',$get_user_details[0]->contact); ?>">
@@ -127,7 +70,7 @@ foreach ($pricing_data as $key => $value) {
 
                                 <!-- Address -->
                                 <div class="col-md-6">
-                                    <div class="mb-3">
+                                    <div class="mb-0">
                                         <!-- <label class="form-label">Address <span class="text-danger">*</span></label> -->
                                         <div class="form-icon position-relative">
                                             <input name="address" id="address" type="hidden" class="form-control" placeholder="Address :" value="<?= set_value('address',$get_user_details[0]->address); ?>">
@@ -138,7 +81,7 @@ foreach ($pricing_data as $key => $value) {
 
                                 <!-- City -->
                                 <div class="col-md-6">
-                                    <div class="mb-3">
+                                    <div class="mb-0">
                                         <!-- <label class="form-label">City <span class="text-danger">*</span></label> -->
                                         <div class="form-icon position-relative">
                                             <input name="city" id="city" type="hidden" class="form-control" placeholder="City :" value="<?= set_value('city',$get_user_details[0]->city); ?>">
@@ -149,7 +92,7 @@ foreach ($pricing_data as $key => $value) {
 
                                 <!-- State -->
                                 <div class="col-md-6">
-                                    <div class="mb-3">
+                                    <div class="mb-0">
                                         <!-- <label class="form-label">State <span class="text-danger">*</span></label> -->
                                         <div class="form-icon position-relative">
                                             <input name="state" id="state" type="hidden" class="form-control" placeholder="State :" value="<?= set_value('state'); ?>">
@@ -193,8 +136,6 @@ foreach ($pricing_data as $key => $value) {
                         </div>
 
 
-                        <br>
-                        <br>
                         <hr>
                         <div class="row">
                             <div class="col-12">
@@ -254,11 +195,72 @@ foreach ($pricing_data as $key => $value) {
 
                             </div>
                         </div>
-                        <br>
-                        <button class="w-100 btn btn-primary">Pay Now</button>
+                        
                     </form>
                 </div>
             </div><!--end col-->
+
+            <div class="col-md-5 col-lg-4 order-md-last">
+               
+                <!-- Product Cart Design -->
+                <div class="card rounded shadow p-4 border-0">
+                    <h5>ORDER SUMMERY</h5>
+                    <ul class="list-group mb-3 border">
+                        <!-- Billing Cycle Section -->
+                        <li class="d-flex justify-content-between lh-sm p-3 border-bottom">
+                            <div>
+                                <h6 class="my-0">Plan</h6>
+                                <!-- <small class="text-muted" id="selectedCycle">None selected</small> -->
+                            </div>
+                            <!-- <span id="selectedPrice" class="text-muted">INR 0.00</span> -->
+                            <span id="selectedCycle" class="text-muted">None selected</span>
+                        </li>
+
+                        <li class="d-flex justify-content-between lh-sm p-3 border-bottom">
+                            <div>
+                                <h6 class="my-0">Price per month</h6>
+                            </div>
+                            <span id="selectedPrice" class="text-muted">INR 0.00</span>
+                        </li>
+                        
+                        <!-- GST Section -->
+                        <li class="d-flex justify-content-between lh-sm p-3 border-bottom">
+                            <div>
+                                <h6 class="my-0">GST @ 18%</h6>
+                                <small class="text-muted">Tax</small>
+                            </div>
+                            <span class="text-muted" id="gstAmount">INR 0.00</span> <!-- Display GST dynamically -->
+                        </li>
+
+                        <!-- Setup fee Section -->
+                        <li class="d-flex justify-content-between bg-light p-3 border-bottom">
+                            <div class="text-warning">
+                                <h6 class="my-0">Setup Fees</h6>
+                            </div>
+                            <span class="text-warning">INR 0.00</span> <!-- Display total dynamically -->
+                        </li>
+
+                        <!-- Total Section -->
+                        <li class="d-flex justify-content-between bg-light p-3 border-bottom">
+                            <div class="text-success">
+                                <h6 class="my-0">Total Due Today</h6>
+                            </div>
+                            <span class="text-success" id="totalAmount">INR 0.00</span> <!-- Display total dynamically -->
+                        </li>
+                    </ul>
+
+                    
+                    
+                    <form>
+                        <div class="form-group">
+                            <!-- <input type="text" class="form-control" placeholder="Promo code"> -->
+                            <button type="submit" class="btn btn-primary form-control">Pay Now</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div><!--end col-->
+
         </div><!--end row-->
     </div><!--end container-->
 </section><!--end section-->
