@@ -192,6 +192,54 @@ foreach ($pricing_data as $key => $value) {
 
                         </div>
 
+
+                        <br>
+                        <br>
+                        <hr>
+                        <div class="row">
+                            <div class="col-12">
+
+                            <?php
+                                $available_os = json_decode($billingData[0]->available_os, true) ?? ['None'];
+                                $db_softwares = json_decode($billingData[0]->db_softwares, true) ?? ['None'];
+                                $cpanels_list = json_decode($billingData[0]->cpanels_list, true) ?? ['None'];
+                            ?>
+
+                                <h4 class="mb-3">Configurable Options</h4>
+
+                                <label for="form-label">Operating System</label>
+                                <select name="" id="" class="form-control">
+                                    <option value="">Select</option>
+                                    <?php 
+                                    foreach($available_os as $key => $os):
+                                        echo  "<option value='$os'>$os</option>";
+                                    endforeach;
+                                    ?>
+                                </select>
+
+                                <label for="form-label">Database Software</label>
+                                <select name="" id="" class="form-control">
+                                    <option value="">Select</option>
+                                    <?php 
+                                    foreach($db_softwares as $key => $db):
+                                        echo  "<option value='$db'>$db</option>";
+                                    endforeach;
+                                    ?>
+                                </select>
+
+                                <label for="form-label">Control Panel</label>
+                                <select name="" id="" class="form-control">
+                                    <option value="">Select</option>
+                                    <?php 
+                                    foreach($available_os as $key => $cp):
+                                        echo  "<option value='$cp'>$cp</option>";
+                                    endforeach;
+                                    ?>
+                                </select>
+
+                            </div>
+                        </div>
+                        <br>
                         <button class="w-100 btn btn-primary">Pay Now</button>
                     </form>
                 </div>
