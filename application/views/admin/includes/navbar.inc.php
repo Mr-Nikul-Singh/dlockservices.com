@@ -483,6 +483,17 @@
                             </li>
                             <!-- End::Settings Slide -->
 
+                            <!-- Start::slide -->
+                            <li class="slide">
+                                <a href="<?= site_url('setting/backup') ?>" class="side-menu__item">
+                                    <span class="side-menu__icon">
+                                        <i class='bx bx-coin-stack'></i>
+                                    </span> 
+                                    <span class="side-menu__label">Backup</span>
+                                </a>
+                            </li>
+                            <!-- End::slide -->
+
 
                             <!-- Start::slide__category -->
                             <li class="slide__category"><span class="category-name">OTHER's</span></li>
@@ -505,17 +516,6 @@
                                         <i class='bx bx-history'></i>
                                     </span> 
                                     <span class="side-menu__label <?= $this->uri->segment(2) == 'login-history' ? 'active' : '' ?>">Login History</span>
-                                </a>
-                            </li>
-                            <!-- End::slide -->
-
-                            <!-- Start::slide -->
-                            <li class="slide">
-                                <a href="<?= site_url('setting/backup') ?>" class="side-menu__item">
-                                    <span class="side-menu__icon">
-                                        <i class='bx bx-coin-stack'></i>
-                                    </span> 
-                                    <span class="side-menu__label">Backup</span>
                                 </a>
                             </li>
                             <!-- End::slide -->
