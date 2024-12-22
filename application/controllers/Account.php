@@ -9,6 +9,7 @@ class Account extends CI_Controller {
 		if(!isset($this->session->client_id)):
 			redirect('login');
 		endif;
+        $this->load->model('Ticket_Model','ticket');
 	}
     
 	public function my_account()
@@ -16,6 +17,7 @@ class Account extends CI_Controller {
 		$this->title = 'My Account';
 		$userID = $this->session->client_id;
 		$data['get_orders'] = $this->root->get_record('tbl_partial_orders',"created_by = $userID");	
+        $data['get_tickets'] = $this->root->get_record('tbl_tickets',"created_by = $userID");
         $this->load->view('public/account',$data); 
     }
     

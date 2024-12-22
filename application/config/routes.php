@@ -78,6 +78,12 @@ $route['save-info']         = 'Account/save_info';
 $route['update-password']   = 'Account/update_password';
 $route['support-center']    = 'Support/support_center';
 
+$route['tickets']          = 'Ticket/tickets';
+$route['tickets/(:num)']   = 'Ticket/tickets/$1';
+$route['add-ticket']       = 'Ticket/add';
+$route['view-ticket/(:num)']      = 'Ticket/view/$1';
+$route['add-ticket-reply/(:num)'] = 'Ticket/add_reply/$1';
+
 $route['vps-servers']            = 'Server/vps_server';
 $route['cloud-servers']          = 'Server/cloud_server';
 $route['dedicated-server']       = 'Server/dedicated_server';

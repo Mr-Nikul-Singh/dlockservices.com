@@ -25,7 +25,7 @@ class Ticket_Model extends CI_Model{
 		if (!empty($filter)) {
 			$this->db->group_start(); // Start grouping the search conditions
 			$this->db->like('ticket_id', $filter);
-			$this->db->or_like('subject', $filter);
+			$this->db->like('subject', $filter);
 			$this->db->or_like('status', $filter);
 			$this->db->or_like('priority', $filter);
 			$this->db->or_like('category', $filter);
@@ -53,7 +53,7 @@ class Ticket_Model extends CI_Model{
 		if(!empty($filter)):
 			$this->db->group_start(); // Start grouping the search conditions
 			$this->db->like('ticket_id', $filter);
-			$this->db->or_like('subject', $filter);
+			$this->db->like('subject', $filter);
 			$this->db->or_like('status', $filter);
 			$this->db->or_like('priority', $filter);
 			$this->db->or_like('category', $filter);
@@ -91,4 +91,4 @@ class Ticket_Model extends CI_Model{
 	}
 	
 }
-?> 
+?>

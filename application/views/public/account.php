@@ -86,6 +86,14 @@
                             </li><!--end nav item-->
                             
                             <li class="nav-item mt-2">
+                                <a class="nav-link rounded" id="ticket-details" data-bs-toggle="pill" href="#ticket" role="tab" aria-controls="ticket" aria-selected="false">
+                                    <div class="text-start py-1 px-3">
+                                        <h6 class="mb-0"><i class="uil uil-ticket h5 align-middle me-2 mb-0"></i> Ticket</h6>
+                                    </div>
+                                </a><!--end nav link-->
+                            </li><!--end nav item-->
+                            
+                            <li class="nav-item mt-2">
                                 <a class="nav-link rounded" role="tab" href="<?= site_url('flogout') ?>" aria-selected="false">
                                     <div class="text-start py-1 px-3">
                                         <h6 class="mb-0"><i class="uil uil-sign-out-alt h5 align-middle me-2 mb-0"></i> Logout</h6>
@@ -101,6 +109,67 @@
                                 <h6 class="text-muted">Hello <span class="text-dark"><?= ucwords(get_userdata('first_name')) ?> </span> (not <span class="text-dark"><?= ucwords(get_userdata('first_name')) ?>  <?= ucwords(get_userdata('last_name')) ?></span>? <a href="<?= site_url('flogout') ?>" class="text-danger">Log out</a>)</h6>
 
                                 <h6 class="text-muted mb-0">From your account dashboard you can view your <a href="javascript:void(0)" class="text-danger">recent orders</a>, manage your <a href="javascript:void(0)" class="text-danger">shipping and billing addresses</a>, and <a href="javascript:void(0)" class="text-danger">edit your password and account details</a>.</h6>
+                            </div><!--end teb pane-->
+
+                            <div class="tab-pane fade shadow rounded p-4" id="ticket" role="tabpanel" aria-labelledby="ticket">
+                                <div class="table-responsive bg-white shadow rounded">
+                                <table class="table mb-0 table-center table-nowrap">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Ticket ID</th>
+                                                <th scope="col">Subject</th>
+                                                <th scope="col">Status</th>
+                                                <th scope="col">Priority</th>
+                                                <th scope="col">Created At</th>
+                                                <th scope="col">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php if(!empty($get_tickets)): ?>
+                                                <?php foreach($get_tickets as $ticket): ?>
+                                            <tr>
+                                                <td><?= htmlspecialchars($ticket->ticket_id); ?></td> <!-- ID -->
+                                                <td><?= htmlspecialchars($ticket->subject); ?></td> <!-- Subject -->
+                                                <td>
+                                                    <?php 
+                                                        $status = htmlspecialchars($ticket->status); 
+                                                        $badgeClass = '';
+
+                                                        // Assign badge color classes based on the status
+                                                        switch ($status) {
+                                                            case 'Open':
+                                                                $badgeClass = 'badge bg-primary'; // Blue for Open
+                                                                break;
+                                                            case 'In Progress':
+                                                                $badgeClass = 'badge bg-warning'; // Yellow for In Progress
+                                                                break;
+                                                            case 'Resolved':
+                                                                $badgeClass = 'badge bg-success'; // Green for Resolved
+                                                                break;
+                                                            case 'Closed':
+                                                                $badgeClass = 'badge bg-danger'; // Grey for Closed
+                                                                break;
+                                                            default:
+                                                                $badgeClass = 'badge bg-dark'; // Dark for Unknown statuses
+                                                        }
+                                                    ?>
+                                                    <span class="<?= $badgeClass; ?>">
+                                                        <?= $status; ?>
+                                                    </span>
+                                                </td>
+                                                <td><?= htmlspecialchars($ticket->priority); ?></td> <!-- Priority -->
+                                                <td><?= htmlspecialchars($ticket->created_at); ?></td> <!-- Created At -->
+                                                <td> 
+                                                    <div class="hstack gap-2 fs-15">
+                                                        <a aria-label="anchor" href="<?= site_url('view-ticket/'.$ticket->id) ?>">View</a>
+                                                    </div>
+                                                </td>
+                                                    </tr>
+                                                <?php endforeach; ?>
+                                            <?php endif; ?>
+                                        </tbody> 
+                                    </table>
+                                </div>
                             </div><!--end teb pane-->
 
                             <div class="tab-pane fade shadow rounded p-4" id="orders" role="tabpanel" aria-labelledby="order-history">

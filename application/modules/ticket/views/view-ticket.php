@@ -36,8 +36,8 @@
                                 <div class="card-body">
                                     <div class="table-responsive"> 
                                         <table class="table text-nowrap table-striped table-hover">
-
-                                            <h4>Ticket: <?= $ticket->subject ?></h1>
+                                            <h6>Ticket ID: <strong>#<?= $ticket->ticket_id ?></strong></h1>
+                                            <h6>Ticket: <?= $ticket->subject ?></h1>
                                             <p><strong>Priority:</strong>
                                                 <?php 
                                                     $status = ($ticket->status); 
