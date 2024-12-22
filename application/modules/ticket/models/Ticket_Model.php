@@ -76,5 +76,18 @@ class Ticket_Model extends CI_Model{
 			return false;
 		endif;
 	}
+
+	public function get_ticket_by_id($ticket_id) {
+        return $this->db->get_where('tbl_tickets', array('id' => $ticket_id))->row();
+    }
+
+	public function get_replies($ticket_id) {
+		$this->db->select('tbl_ticket_replies.*, tbl_users.full_name AS replied_by_name, tbl_users.email AS replied_by_email');
+		$this->db->from('tbl_ticket_replies');
+		$this->db->join('tbl_users', 'tbl_ticket_replies.replied_by = tbl_users.id', 'left');
+		$this->db->where('tbl_ticket_replies.ticket_id', $ticket_id);
+		return $this->db->get()->result();
+	}
+	
 }
 ?> 

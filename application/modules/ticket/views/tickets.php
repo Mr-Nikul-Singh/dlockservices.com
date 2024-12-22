@@ -96,6 +96,7 @@
                                                     <th scope="col">Status</th>
                                                     <th scope="col">Priority</th>
                                                     <th scope="col">Created At</th>
+                                                    <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -128,12 +129,39 @@
                                                 <td><?= htmlspecialchars($ticket->ticket_id); ?></td> <!-- ID -->
                                                 <td>Demo</td>
                                                 <td><?= htmlspecialchars($ticket->subject); ?></td> <!-- Subject -->
-                                                <td><?= htmlspecialchars($ticket->status); ?></td> <!-- Status -->
+                                                <td>
+                                                    <?php 
+                                                        $status = htmlspecialchars($ticket->status); 
+                                                        $badgeClass = '';
+
+                                                        // Assign badge color classes based on the status
+                                                        switch ($status) {
+                                                            case 'Open':
+                                                                $badgeClass = 'badge bg-primary'; // Blue for Open
+                                                                break;
+                                                            case 'In Progress':
+                                                                $badgeClass = 'badge bg-warning'; // Yellow for In Progress
+                                                                break;
+                                                            case 'Resolved':
+                                                                $badgeClass = 'badge bg-success'; // Green for Resolved
+                                                                break;
+                                                            case 'Closed':
+                                                                $badgeClass = 'badge bg-danger'; // Grey for Closed
+                                                                break;
+                                                            default:
+                                                                $badgeClass = 'badge bg-dark'; // Dark for Unknown statuses
+                                                        }
+                                                    ?>
+                                                    <span class="<?= $badgeClass; ?>">
+                                                        <?= $status; ?>
+                                                    </span>
+                                                </td>
                                                 <td><?= htmlspecialchars($ticket->priority); ?></td> <!-- Priority -->
                                                 <td><?= htmlspecialchars($ticket->created_at); ?></td> <!-- Created At -->
                                                 <td> 
                                                     <div class="hstack gap-2 fs-15">
-                                                        <a aria-label="anchor" href="<?= site_url('ticket/reply-ticket/'.$ticket->id) ?>" class="btn btn-wave waves-effect waves-light btn-sm btn-primary-light">Reply</a>
+                                                        <!-- <a aria-label="anchor" href="<?= site_url('ticket/reply-ticket/'.$ticket->id) ?>" class="btn btn-wave waves-effect waves-light btn-sm btn-primary-light">Reply</a> -->
+                                                        <a aria-label="anchor" href="<?= site_url('ticket/view/'.$ticket->id) ?>" class="btn btn-icon btn-wave waves-effect waves-light btn-sm btn-primary-light"><i class="ti ti-eye"></i></a>
                                                         <a aria-label="anchor" href="<?= site_url('ticket/edit-ticket/'.$ticket->id) ?>" class="btn btn-icon btn-wave waves-effect waves-light btn-sm btn-success-light"><i class="ti ti-edit"></i></a>
                                                         <a href="#" onclick="delete_record(<?= $ticket->id ?>,'ticket/delete-ticket')" class="btn btn-icon btn-wave waves-effect waves-light btn-sm btn-danger-light"><i class="ti ti-trash"></i></a>
                                                     </div>

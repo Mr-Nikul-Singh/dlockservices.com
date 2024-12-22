@@ -30,60 +30,59 @@
                         </div>
                         <div class="card-body">
                             
-                            <form action="<?= site_url('ticket/create') ?>" method="post">
+                            <form action="<?= site_url('ticket/edit-ticket/'.$id) ?>" method="post">
                                 <div class="row">
                                     <!-- Subject -->
                                     <div class="mb-4 col-xl-6">
                                         <label for="subject" class="form-label">Subject</label>
-                                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter ticket subject" 
-                                            value="<?= set_value('subject'); ?>" required>
-                                        <?= form_error('subject', '<div class="text-danger">', '</div>'); ?>
+                                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter ticket subject" value="<?= set_value('subject',$get_tickets[0]->subject); ?>">
+                                        <small><?= form_error('subject'); ?></small>
                                     </div>
 
                                     <!-- Category -->
                                     <div class="mb-4 col-xl-6">
                                         <label for="category" class="form-label">Category</label>
-                                        <select class="form-control" id="category" name="category" required>
+                                        <select class="form-control" id="category" name="category">
                                             <option value="">Select Category</option>
-                                            <option value="support" <?= set_select('category', 'support'); ?>>Support</option>
-                                            <option value="billing" <?= set_select('category', 'billing'); ?>>Billing</option>
-                                            <option value="sales" <?= set_select('category', 'sales'); ?>>Sales</option>
-                                            <option value="others" <?= set_select('category', 'others'); ?>>Others</option>
+                                            <option value="support" <?= set_select('category', 'support'); ?> <?= $get_tickets[0]->category == 'support' ? 'selected' : '' ?>>Support</option>
+                                            <option value="billing" <?= set_select('category', 'billing'); ?> <?= $get_tickets[0]->category == 'billing' ? 'selected' : '' ?>>Billing</option>
+                                            <option value="sales" <?= set_select('category', 'sales'); ?> <?= $get_tickets[0]->category == 'sales' ? 'selected' : '' ?>>Sales</option>
+                                            <option value="others" <?= set_select('category', 'others'); ?> <?= $get_tickets[0]->category == 'others' ? 'selected' : '' ?>>Others</option>
                                         </select>
-                                        <?= form_error('category', '<div class="text-danger">', '</div>'); ?>
+                                        <small><?= form_error('category'); ?></small>
                                     </div>
 
                                     <!-- Priority -->
                                     <div class="mb-4 col-xl-6">
                                         <label for="priority" class="form-label">Priority</label>
-                                        <select class="form-control" id="priority" name="priority" required>
+                                        <select class="form-control" id="priority" name="priority">
                                             <option value="">Select Priority</option>
-                                            <option value="Low" <?= set_select('priority', 'Low'); ?>>Low</option>
-                                            <option value="Medium" <?= set_select('priority', 'Medium'); ?>>Medium</option>
-                                            <option value="High" <?= set_select('priority', 'High'); ?>>High</option>
-                                            <option value="Critical" <?= set_select('priority', 'Critical'); ?>>Critical</option>
+                                            <option value="Low" <?= set_select('priority', 'Low'); ?> <?= $get_tickets[0]->priority == 'Low' ? 'selected' : '' ?>>Low</option>
+                                            <option value="Medium" <?= set_select('priority', 'Medium'); ?> <?= $get_tickets[0]->priority == 'Medium' ? 'selected' : '' ?>>Medium</option>
+                                            <option value="High" <?= set_select('priority', 'High'); ?> <?= $get_tickets[0]->priority == 'High' ? 'selected' : '' ?>>High</option>
+                                            <option value="Critical" <?= set_select('priority', 'Critical'); ?> <?= $get_tickets[0]->priority == 'Critical' ? 'selected' : '' ?>>Critical</option>
                                         </select>
-                                        <?= form_error('priority', '<div class="text-danger">', '</div>'); ?>
+                                        <small><?= form_error('priority'); ?></small>
                                     </div>
 
                                     <!-- Status -->
                                     <div class="mb-4 col-xl-6">
                                         <label for="status" class="form-label">Status</label>
-                                        <select class="form-control" id="status" name="status" required>
+                                        <select class="form-control" id="status" name="status">
                                             <option value="">Select Status</option>
-                                            <option value="Open" <?= set_select('status', 'Open'); ?>>Open</option>
-                                            <option value="In Progress" <?= set_select('status', 'In Progress'); ?>>In Progress</option>
-                                            <option value="Resolved" <?= set_select('status', 'Resolved'); ?>>Resolved</option>
-                                            <option value="Closed" <?= set_select('status', 'Closed'); ?>>Closed</option>
+                                            <option value="Open" <?= set_select('status', 'Open'); ?> <?= $get_tickets[0]->status == 'Open' ? 'selected' : '' ?>>Open</option>
+                                            <option value="In Progress" <?= set_select('status', 'In Progress'); ?> <?= $get_tickets[0]->status == 'In Progress' ? 'selected' : '' ?>>In Progress</option>
+                                            <option value="Resolved" <?= set_select('status', 'Resolved'); ?> <?= $get_tickets[0]->status == 'Resolved' ? 'selected' : '' ?>>Resolved</option>
+                                            <option value="Closed" <?= set_select('status', 'Closed'); ?> <?= $get_tickets[0]->status == 'Closed' ? 'selected' : '' ?>>Closed</option>
                                         </select>
-                                        <?= form_error('status', '<div class="text-danger">', '</div>'); ?>
+                                        <small><?= form_error('status'); ?></small>
                                     </div>
 
                                     <!-- Description -->
                                     <div class="mb-4 col-xl-12">
                                         <label for="description" class="form-label">Description</label>
-                                        <textarea class="form-control" id="mytextarea1" name="description" rows="4" placeholder="Enter ticket description..." required><?= set_value('description'); ?></textarea>
-                                        <?= form_error('description', '<div class="text-danger">', '</div>'); ?>
+                                        <textarea class="form-control" id="mytextarea1" name="description" rows="4" placeholder="Enter ticket description..."><?= set_value('description',$get_tickets[0]->description); ?></textarea>
+                                        <small><?= form_error('description'); ?></small>
                                     </div>
 
                                     <!-- Submit Button -->
