@@ -70,24 +70,32 @@
                                     <td><?= $get_orders->zip ?></td>
                                 </tr>
                                 <tr>
-                                    <th>Server Type</th>
-                                    <td><?= $get_orders->serverType ?></td>
+                                    <th>Zip Code</th>
+                                    <td><?= htmlspecialchars($get_orders->zip) ?></td>
                                 </tr>
                                 <tr>
-                                    <th>CPU Cores</th>
-                                    <td><?= $get_orders->cpuCores ?></td>
+                                    <th>Plan Name</th>
+                                    <td><?= htmlspecialchars($get_orders->plan_name) ?></td>
                                 </tr>
                                 <tr>
-                                    <th>RAM Size</th>
-                                    <td><?= $get_orders->ramSize ?></td>
+                                    <th>Hosting Type</th>
+                                    <td><?= htmlspecialchars($get_orders->hosting_type) ?></td>
                                 </tr>
                                 <tr>
-                                    <th>Storage</th>
-                                    <td><?= $get_orders->storage ?></td>
+                                    <th>OS System</th>
+                                    <td><?= htmlspecialchars($get_orders->os_system) ?></td>
                                 </tr>
                                 <tr>
-                                    <th>Operating System</th>
-                                    <td><?= $get_orders->os ?></td>
+                                    <th>Database Software</th>
+                                    <td><?= htmlspecialchars($get_orders->db_software) ?></td>
+                                </tr>
+                                <tr>
+                                    <th>Control Panel</th>
+                                    <td><?= htmlspecialchars($get_orders->ctrl_panel) ?></td>
+                                </tr>
+                                <tr>
+                                    <th>Total Price</th>
+                                    <td>₹<?= number_format($get_orders->total_price, 2) ?></td>
                                 </tr>
                                 <tr>
                                     <th>Status</th>

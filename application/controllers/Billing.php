@@ -22,19 +22,29 @@ class Billing extends CI_Controller {
         $this->form_validation->set_rules('state', 'State', '');
         $this->form_validation->set_rules('zip', 'Zip Code', '');
 
-
+        
+        
         if ($this->form_validation->run() == FALSE) { 
-			$this->form_validation->set_error_delimiters('<div class="text-red">', '</div>');
+            $this->form_validation->set_error_delimiters('<div class="text-red">', '</div>');
         } else {
             $data = [
-                'created_by' => $this->session->client_id,
-                'order_id'   => rand(6,490885),
-                'fullName'   => $this->input->post('fullName'),
-                'email'      => $this->input->post('email'),
-                'phone'      => $this->input->post('phone'),
-                'address'    => $this->input->post('address'),
-                'city'       => $this->input->post('city'),
-                'state'      => $this->input->post('state'),
+                'created_by'   => $this->session->client_id,
+                'order_id'     => rand(6,490885),
+                'plan_id'      => $this->input->post('plan_id'),
+                'fullName'     => $this->input->post('fullName'),
+                'email'        => $this->input->post('email'),
+                'phone'        => $this->input->post('phone'),
+                'address'      => $this->input->post('address'),
+                'city'         => $this->input->post('city'),
+                'state'        => $this->input->post('state'),
+                'zip'          => $this->input->post('zip'),
+                'os_system'    => $this->input->post('os_system'),
+                'db_software'  => $this->input->post('db_software'),
+                'ctrl_panel'   => $this->input->post('ctrl_panel'),
+                'total_price'  => $this->input->post('total_price'),
+                'gst_amount'   => $this->input->post('gst_amount'),
+                'plan_name'    => $this->input->post('plan_name'),
+                'hosting_type' => $this->input->post('hosting_type'),
             ];
 
             $this->root->insert_record('tbl_partial_orders',$data);

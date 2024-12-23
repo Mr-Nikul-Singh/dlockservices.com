@@ -247,6 +247,9 @@
         </div>
         <!-- end Style switcher -->
 
+    <script src="<?= base_url('assets/ckeditor/ckeditor.js') ?>"></script>
+    <script src="<?= base_url('assets/ckeditor/ck_config.js') ?>"></script>
+    
         
     <?php if(!empty($GoogleAnalyticsCode)): ?>
         <?= $GoogleAnalyticsCode ?>

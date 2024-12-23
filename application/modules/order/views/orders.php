@@ -150,11 +150,13 @@
                                                 <!-- <td><?= ($val->address) ? $val->address : 'No Updated' ?></td> -->
                                                 <td><?= $val->city.', '.$val->state.','.$val->zip ?></td>
                                                 <td>
-                                                    <span><strong>Server Type :</strong>  <?= $val->serverType ?></span><br>
-                                                    <span><strong>CPU Cores :</strong> <?= $val->cpuCores ?></span><br>
-                                                    <span><strong>RAM Size :</strong> <?= $val->ramSize ?></span><br>
-                                                    <span><strong>Storage :</strong> <?= $val->storage ?></span><br>
-                                                    <span><strong>OS :</strong> <?= $val->os ?></span>
+                                                    <span><strong>Plan Name :</strong>  <?= $val->plan_name ?></span><br>
+                                                    <span><strong>Hosting Type :</strong> <?= $val->hosting_type ?></span><br>
+                                                    <span><strong>OS System :</strong> <?= $val->os_system ?></span><br>
+                                                    <span><strong>DB Software :</strong> <?= $val->db_software ?></span><br>
+                                                    <span><strong>Cpanel :</strong> <?= $val->ctrl_panel ?></span><br>
+                                                    <span><strong>GST Amount :</strong> <?= $val->gst_amount ?></span><br>
+                                                    <span><strong>Total Price :</strong> <?= $val->total_price ?></span><br>
                                                 </td>
                                                 <td><?= $val->created_at ?></td>
                                                 <td class="text-center">

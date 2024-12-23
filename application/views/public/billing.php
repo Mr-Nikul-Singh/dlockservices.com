@@ -36,7 +36,7 @@ foreach ($pricing_data as $key => $value) {
 
                             <div class="row">
                                 <!-- Full Name -->
-                                <div class="col-md-6">
+                                <div class="col-md-">
                                     <div class="mb-0">
                                         <!-- <label class="form-label">Full Name <span class="text-danger">*</span></label> -->
                                         <div class="form-icon position-relative">
@@ -47,7 +47,7 @@ foreach ($pricing_data as $key => $value) {
                                 </div>
 
                                 <!-- Email -->
-                                <div class="col-md-6">
+                                <div class="col-md-">
                                     <div class="mb-0">
                                         <!-- <label class="form-label">Email Address <span class="text-danger">*</span></label> -->
                                         <div class="form-icon position-relative">
@@ -58,7 +58,7 @@ foreach ($pricing_data as $key => $value) {
                                 </div>
 
                                 <!-- Phone -->
-                                <div class="col-md-6">
+                                <div class="col-md-">
                                     <div class="mb-0">
                                         <!-- <label class="form-label">Phone Number <span class="text-danger">*</span></label> -->
                                         <div class="form-icon position-relative">
@@ -71,9 +71,9 @@ foreach ($pricing_data as $key => $value) {
                                 <!-- Address -->
                                 <div class="col-md-6">
                                     <div class="mb-0">
-                                        <!-- <label class="form-label">Address <span class="text-danger">*</span></label> -->
+                                        <label class="form-label">Address <span class="text-danger">*</span></label>
                                         <div class="form-icon position-relative">
-                                            <input name="address" id="address" type="hidden" class="form-control" placeholder="Address :" value="<?= set_value('address',$get_user_details[0]->address); ?>">
+                                            <input name="address" id="address" type="text" class="form-control" placeholder="Address :" value="<?= set_value('address',$get_user_details[0]->address); ?>">
                                             <?= form_error('address', '<small class="text-danger">', '</small>'); ?>
                                         </div>
                                     </div>
@@ -82,9 +82,9 @@ foreach ($pricing_data as $key => $value) {
                                 <!-- City -->
                                 <div class="col-md-6">
                                     <div class="mb-0">
-                                        <!-- <label class="form-label">City <span class="text-danger">*</span></label> -->
+                                        <label class="form-label">City <span class="text-danger">*</span></label>
                                         <div class="form-icon position-relative">
-                                            <input name="city" id="city" type="hidden" class="form-control" placeholder="City :" value="<?= set_value('city',$get_user_details[0]->city); ?>">
+                                            <input name="city" id="city" type="text" class="form-control" placeholder="City :" value="<?= set_value('city',$get_user_details[0]->city); ?>">
                                             <?= form_error('city', '<small class="text-danger">', '</small>'); ?>
                                         </div>
                                     </div> 
@@ -93,9 +93,9 @@ foreach ($pricing_data as $key => $value) {
                                 <!-- State -->
                                 <div class="col-md-6">
                                     <div class="mb-0">
-                                        <!-- <label class="form-label">State <span class="text-danger">*</span></label> -->
+                                        <label class="form-label">State <span class="text-danger">*</span></label>
                                         <div class="form-icon position-relative">
-                                            <input name="state" id="state" type="hidden" class="form-control" placeholder="State :" value="<?= set_value('state'); ?>">
+                                            <input name="state" id="state" type="text" class="form-control" placeholder="State :" value="<?= set_value('state'); ?>">
                                             <?= form_error('state', '<small class="text-danger">', '</small>'); ?>
                                         </div>
                                     </div>
@@ -104,15 +104,22 @@ foreach ($pricing_data as $key => $value) {
                                 <!-- Zip Code -->
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <!-- <label class="form-label">Zip Code <span class="text-danger">*</span></label> -->
+                                        <label class="form-label">Zip Code <span class="text-danger">*</span></label>
                                         <div class="form-icon position-relative">
-                                            <input name="zip" id="zip" type="hidden" class="form-control" placeholder="Zip Code :" value="<?= set_value('zip'); ?>">
+                                            <input name="zip" id="zip" type="text" class="form-control" placeholder="Zip Code :" value="<?= set_value('zip'); ?>">
                                             <?= form_error('zip', '<small class="text-danger">', '</small>'); ?>
                                         </div>
                                     </div> 
                                 </div>
                             </div>
 
+                            <input type="hidden" id="totalAmountval" name="total_price" value="">
+                            <input type="hidden" id="gstAmt" name="gst_amount" value="">
+                            <input type="hidden" name="plan_name" value="<?= $billingData[0]->plan_name ?>">
+                            <input type="hidden" name="hosting_type" value="<?= $billingData[0]->hosting_type ?>">
+                            <input type="hidden" name="plan_id" value="<?= $billingData[0]->id ?>">
+
+                            <hr>
                             <!-- Dynamic Billing Cycle Form -->
                             <div class="form-check mb-3">
                                 <?php $count  = 0; foreach ($pricing_data as $duration => $price): ?>
@@ -135,7 +142,6 @@ foreach ($pricing_data as $key => $value) {
 
                         </div>
 
-
                         <hr>
                         <div class="row">
                             <div class="col-12">
@@ -153,7 +159,7 @@ foreach ($pricing_data as $key => $value) {
                                     <div class="col-md-12 col-xl-6">
                                         <div class="form-group mt-2">
                                             <label for="form-label">Operating System</label>
-                                            <select name="" id="" class="form-control" required>
+                                            <select name="os_system" id="" class="form-control" required>
                                                 <option value="">Select</option>
                                                 <?php 
                                                 foreach($available_os as $key => $os):
@@ -167,7 +173,7 @@ foreach ($pricing_data as $key => $value) {
                                     <div class="col-md-12 col-xl-6">
                                         <div class="form-group mt-2">
                                             <label for="form-label">Database Software</label>
-                                            <select name="" id="" class="form-control" required>
+                                            <select name="db_software" id="" class="form-control" required>
                                                 <option value="">Select</option>
                                                 <?php 
                                                 foreach($db_softwares as $key => $db):
@@ -181,7 +187,7 @@ foreach ($pricing_data as $key => $value) {
                                     <div class="col-md-12 col-xl-6">
                                         <div class="form-group mt-2">
                                             <label for="form-label">Control Panel</label>
-                                            <select name="" id="" class="form-control" required>
+                                            <select name="ctrl_panel" id="" class="form-control" required>
                                                 <option value="">Select</option>
                                                 <?php 
                                                 foreach($cpanels_list as $key => $cp):
@@ -191,6 +197,7 @@ foreach ($pricing_data as $key => $value) {
                                             </select>
                                         </div>
                                     </div>
+                                    
                                 </div>  
 
                             </div>
@@ -275,6 +282,7 @@ const pricingData = <?= json_encode($pricing_data); ?>;
 
 // Function to update price and total when billing cycle changes
 function updatePrice() {
+
     const selectedCycle = document.querySelector('input[name="billing_cycle"]:checked');
     
     if (selectedCycle) {
@@ -303,11 +311,15 @@ function updatePrice() {
                 // Calculate total price for the selected months
                 const totalPrice = price * months;
 
+                
                 // Calculate GST (18%)
                 const gstAmount = totalPrice * 0.18;
-
+                
                 // Calculate final total (Price + GST)
                 const totalAmount = totalPrice + gstAmount;
+
+                $('#totalAmountval').val(totalAmount);
+                $('#gstAmt').val(gstAmount);
 
                 // Update the displayed values (selected cycle, price, GST, and total)
                 document.getElementById('selectedCycle').textContent = `${ucwords(selectedDuration.replace('_', ' '))} Plan`;
@@ -315,6 +327,7 @@ function updatePrice() {
                 document.getElementById('gstAmount').textContent = `INR ${gstAmount.toFixed(2)}`;
                 document.getElementById('totalAmount').textContent = `INR ${totalAmount.toFixed(2)}`;
                 document.getElementById('MonthPrice').textContent = `INR ${price.toFixed(2)}`;
+                
             } else {
                 alert("Invalid price selected");
             }
