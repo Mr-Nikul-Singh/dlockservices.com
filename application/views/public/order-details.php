@@ -2,8 +2,8 @@
 <?php require_once(APPPATH.'views/public/includes/light-navbar.inc.php'); ?>
 
     <!-- Home Start -->
-    <section class="bg-half-170 d-table w-100 bg-light" style="background: url('assets/public/images/bg/page.png') top center;"  id="home">
-        <div class="container">
+    <section class="bg-half-170 d-table w-100 bg-light d-none" style="background: url('assets/public/images/bg/page.png') top center;"  id="home">
+        <div class="container"> 
             <div class="row mt-5">
                 <div class="col-lg-12">
                     <div class="title-heading text-center text-md-start">
@@ -34,8 +34,9 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card blog-post border-0 shadow rounded overflow-hidden">
-
+                        
                         <div class="card-body p-4 content">
+                            <div class="mb-3"><?= go_back() ?></div>
                             <table class="table table-hover table-bordered">
                                 <tr>
                                     <th>Order ID</th>
