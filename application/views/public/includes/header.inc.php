@@ -20,6 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?= $MedatDesc ?>" />
     <meta name="keywords" content="<?= $keyowrdsOfMedata ?>" />
+    <link rel="canonical" href="<?= base_url(uri_string()) ?>" />
     <!-- favicon -->
      <?php if(!empty($TitleIco)): ?>
         <link rel="shortcut icon" href="<?= base_url('assets/meta/'.$TitleIco) ?>">
