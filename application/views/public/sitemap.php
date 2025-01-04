@@ -35,9 +35,6 @@
   <lastmod>2024-01-20T04:54:08+00:00</lastmod>
   <priority>1.00</priority>
 
-</url>
-
-<url>
   <?php if(!empty($blog)): ?>
     <?php foreach($blog as $vl): ?>
       <loc><?= site_url('blog-view/'.$vl->slug_url) ?></loc>
@@ -45,6 +42,7 @@
       <priority>1.00</priority>
     <?php endforeach; ?>
   <?php endif; ?>
+
 </url>
 
 </urlset>
