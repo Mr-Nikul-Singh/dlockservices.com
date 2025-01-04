@@ -10,9 +10,7 @@ class Billing extends CI_Controller {
     
 	public function billing_details($id)
     {
-        if(!isset($this->session->client_id)):
-			redirect('login');
-		endif;
+
         $this->title = 'Order Details';
         $this->form_validation->set_rules('fullName', 'Full Name', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
@@ -27,6 +25,9 @@ class Billing extends CI_Controller {
         if ($this->form_validation->run() == FALSE) { 
             $this->form_validation->set_error_delimiters('<div class="text-red">', '</div>');
         } else {
+            if(!isset($this->session->client_id)):
+                redirect('login');
+            endif;
             $data = [
                 'created_by'   => $this->session->client_id,
                 'order_id'     => rand(6,490885),
